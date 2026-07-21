@@ -641,10 +641,10 @@ window.QUIZZES = {
    {
     "q": "¿Cuál es la única prueba de carácter ELIMINATORIO del concurso docente?",
     "o": [
-     "La prueba psicotécnica",
-     "La valoración de antecedentes",
+     "La prueba psicotécnica aplicada al inicio del proceso",
+     "La valoración de antecedentes y experiencia profesional",
      "La prueba de aptitudes y competencias básicas",
-     "La entrevista de idoneidad"
+     "La entrevista de idoneidad ante el comité evaluador"
     ],
     "a": 2
    },
@@ -661,9 +661,9 @@ window.QUIZZES = {
    {
     "q": "En una pregunta de juicio situacional del concurso, para elegir la opción correcta conviene…",
     "o": [
-     "elegir la opción más larga y completa, que suele ser la correcta",
-     "marcar la primera opción que parezca pedagógicamente razonable",
-     "descartar toda opción que mencione normas o protocolos por ser demasiado teórica",
+     "elegir la opción más larga y completa, que suele ser la correcta por incluir más información relevante",
+     "marcar la primera opción que parezca pedagógicamente razonable sin analizar las demás alternativas",
+     "descartar toda opción que mencione normas o protocolos por ser demasiado teórica para un caso práctico",
      "identificar el dato específico del caso y la demanda del enunciado, y escoger la opción que los satisface"
     ],
     "a": 3
@@ -686,9 +686,9 @@ window.QUIZZES = {
    {
     "q": "¿Qué caracteriza a una situación tipo II según la Ley 1620?",
     "o": [
-     "un conflicto esporádico entre estudiantes, manejado en el momento por el docente",
-     "cualquier desacuerdo o roce entre estudiantes dentro del aula",
-     "un presunto delito, como una lesión personal grave, que se remite a la autoridad",
+     "un conflicto esporádico entre estudiantes, manejado en el momento por el docente de forma pedagógica",
+     "cualquier desacuerdo o roce entre estudiantes dentro del aula que no requiere intervención institucional",
+     "un presunto delito, como una lesión personal grave, que se remite de inmediato a la autoridad competente",
      "una agresión repetida o ciberacoso sin presunto delito, que activa el protocolo del comité"
     ],
     "a": 3
@@ -696,10 +696,10 @@ window.QUIZZES = {
    {
     "q": "El PIAR (Decreto 1421) se define como…",
     "o": [
-     "un diagnóstico clínico de la discapacidad que elabora el docente",
-     "un formato que exime al estudiante con discapacidad de ser evaluado",
+     "un diagnóstico clínico de la discapacidad que elabora el docente titular del grupo en coordinación con salud",
+     "un formato institucional que exime al estudiante con discapacidad de ser evaluado bajo los criterios regulares",
      "un plan individual de ajustes razonables construido con el estudiante y su familia",
-     "el documento que autoriza el ingreso del estudiante a un aula especializada"
+     "el documento oficial que autoriza el ingreso del estudiante con discapacidad a un aula especializada externa"
     ],
     "a": 2
    }
@@ -721,20 +721,20 @@ window.QUIZZES = {
    {
     "q": "¿Quién aprueba el presupuesto del Fondo de Servicios Educativos en una institución?",
     "o": [
-     "El rector como ordenador del gasto y representante legal",
-     "La secretaría de educación municipal o departamental",
+     "El rector como ordenador del gasto y representante legal de la institución",
+     "La secretaría de educación de la entidad territorial certificada correspondiente",
      "El consejo directivo como máxima instancia de gobierno escolar",
-     "El consejo académico por ser el órgano de gestión"
+     "El consejo académico por ser el órgano de gestión pedagógica institucional"
     ],
     "a": 2
    },
    {
     "q": "Según la Ley 1098, si un docente conoce una presunta vulneración de derechos de un menor, debe…",
     "o": [
-     "Investigar por su cuenta antes de reportar para tener evidencias",
+     "Investigar por su cuenta antes de reportar para reunir evidencias suficientes",
      "Reportar a las autoridades competentes: es corresponsable de la protección",
-     "Esperar instrucciones de la familia del estudiante antes de actuar",
-     "Consultar con el sindicato para protegerse jurídicamente primero"
+     "Esperar instrucciones de la familia del estudiante antes de activar ninguna ruta",
+     "Consultar con el sindicato para protegerse jurídicamente antes de cualquier acción"
     ],
     "a": 1
    }
@@ -746,9 +746,9 @@ window.QUIZZES = {
    {
     "q": "La tesis de un texto argumentativo es…",
     "o": [
-     "El primer párrafo completo del texto argumentativo",
-     "La idea que introduce el tema sin tomar posición",
-     "El resumen de las conclusiones presentadas al final",
+     "El primer párrafo completo del texto argumentativo, donde aparece el tema",
+     "La idea que introduce el tema de forma general sin tomar posición al respecto",
+     "El resumen de las conclusiones que el autor presenta al final de su exposición",
      "La postura central que el autor defiende con argumentos"
     ],
     "a": 3
@@ -781,10 +781,10 @@ window.QUIZZES = {
    {
     "q": "En el examen, las preguntas de área disciplinar suelen combinar…",
     "o": [
-     "Solo contenido puro de la disciplina sin contexto pedagógico",
+     "Solo contenido puro de la disciplina sin contexto pedagógico ni situaciones de aula",
      "Contenido de la disciplina + cómo enseñarlo (didáctica del área)",
-     "Solo pedagogía general aplicada a cualquier materia",
-     "Preguntas de cultura general y conocimiento enciclopédico"
+     "Solo pedagogía general aplicada a cualquier materia sin contenido disciplinar específico",
+     "Preguntas de cultura general y conocimiento enciclopédico del área de formación"
     ],
     "a": 1
    },
@@ -802,9 +802,9 @@ window.QUIZZES = {
     "q": "En un aula multigrado de primaria, la mejor estrategia es…",
     "o": [
      "Diseñar actividades por niveles con propósito común y trabajo colaborativo",
-     "Dictar la misma clase a todos los grados por igual",
-     "Atender un grado por día de la semana para personalizar",
-     "Asignar trabajo autónomo a los mayores y enseñar a los menores"
+     "Dictar la misma clase a todos los grados por igual sin diferenciación de nivel",
+     "Atender un grado por día de la semana para personalizar la enseñanza de cada uno",
+     "Asignar trabajo autónomo a los mayores y dedicar la atención solo a los menores"
     ],
     "a": 0
    }
@@ -816,29 +816,29 @@ window.QUIZZES = {
    {
     "q": "Ante dos opciones que parecen correctas, eliges…",
     "o": [
-     "La más específica y técnica del conjunto",
-     "La primera que leíste para no perder tiempo",
+     "La más específica y técnica del conjunto, con mayor precisión terminológica",
+     "La primera que leíste para no perder tiempo valioso en el análisis del resto",
      "La que mejor protege los derechos del estudiante y sigue el debido proceso",
-     "La más larga y detallada porque suele ser la correcta"
+     "La más larga y detallada porque suele incluir la información más completa"
     ],
     "a": 2
    },
    {
     "q": "Si una pregunta está mal redactada o parece ambigua, lo mejor es…",
     "o": [
-     "No responderla para no arriesgar puntos",
+     "No responderla para no arriesgar puntos en una pregunta potencialmente anulable",
      "Responder con el patrón pedagógico-normativo y seguir sin perder tiempo",
-     "Impugnarla mentalmente y quedarte pensando en el error",
-     "Marcar la opción más larga y pasar a la siguiente"
+     "Impugnarla mentalmente y quedarte pensando hasta descifrar la intención del evaluador",
+     "Marcar la opción más larga y pasar a la siguiente pregunta sin analizar demasiado"
     ],
     "a": 1
    },
    {
     "q": "¿Cuál es la distribución de tiempo recomendada en un examen de 60 preguntas en 4 horas?",
     "o": [
-     "4 minutos exactos por pregunta desde el inicio",
-     "Dedicar los primeros 30 minutos solo a leer todas las preguntas",
-     "Empezar por las más difíciles para asegurarlas primero",
+     "4 minutos exactos por pregunta desde el inicio sin saltar ninguna en el recorrido",
+     "Dedicar los primeros 30 minutos solo a leer todas las preguntas antes de empezar",
+     "Empezar por las más difíciles para asegurar los puntos de mayor valor del examen",
      "Primera pasada rápida respondiendo las seguras, segunda pasada para las difíciles"
     ],
     "a": 3
