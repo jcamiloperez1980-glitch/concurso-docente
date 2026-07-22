@@ -118,7 +118,7 @@
 
       '<div class="rf-note">¿Dudas o quieres que hablemos de tu caso? Escríbeme a ' +
         '<a href="' + WA + '" target="_blank" rel="noopener" style="color:var(--claude);font-weight:700;text-decoration:none">WhatsApp +57 311 612 8640</a> ' +
-        'o a hola@researchailab.com. Sin compromiso.</div>' +
+        'o a jcamilope@researchailab.com. Sin compromiso.</div>' +
 
     '</div>';
 
