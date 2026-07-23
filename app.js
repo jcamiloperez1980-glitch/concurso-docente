@@ -239,7 +239,7 @@ const PHASES = [
     "bullets": [
      "Porcentajes, regla de tres y proporciones en contexto escolar",
      "Lectura de gráficos y tablas: matrícula, deserción, presupuesto",
-     "10 preguntas tipo examen con solución paso a paso"
+     "15 preguntas tipo examen con gráficos, tablas y solución paso a paso"
     ],
     "source": "Concurso Docente"
    },
