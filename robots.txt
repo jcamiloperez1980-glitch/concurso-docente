@@ -1,0 +1,31 @@
+User-agent: *
+Disallow: /content.js
+Disallow: /app.js
+Disallow: /flashcards-data.js
+Disallow: /escenario-data.js
+Disallow: /videos-data.js
+Disallow: /transcripts.js
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /

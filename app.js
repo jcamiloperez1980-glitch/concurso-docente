@@ -574,11 +574,6 @@ function addControlBtns() {
     tb.style.cssText='margin-left:auto;flex-shrink:0;padding:5px 12px;border-radius:100px;background:var(--ui-2);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit';
     document.getElementById('tocBar').appendChild(tb);
   }
-  if(!document.getElementById('langBtn')) {
-    const lb=document.createElement('button'); lb.id='langBtn'; lb.onclick=toggleLang; lb.textContent=LANG.langBtn;
-    lb.style.cssText='margin-left:8px;flex-shrink:0;padding:5px 12px;border-radius:100px;background:var(--ui-2);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit';
-    document.getElementById('tocBar').appendChild(lb);
-  }
 }
 const SK='concursoDocente'; // ← clave de progreso en localStorage: ÚNICA por curso (cámbiala en cada curso nuevo)
 const getCompleted=()=>{ try{return JSON.parse(localStorage.getItem(SK)||'[]')}catch{return[]} };

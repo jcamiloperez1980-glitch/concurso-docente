@@ -4,9 +4,25 @@
 // Actualizar manualmente o con /actualiza-cursos cuando haya novedades.
 // ============================================================
 window.NOVEDADES = {
-  actualizado: "2026-07-21",
+  actualizado: "2026-07-24",
   color: "#d97706",
   items: [
+    {
+      fecha: "2026-07-22",
+      tag: "Oficial",
+      titulo: "Cifra actualizada: 26.741 vacantes para docentes y directivos docentes",
+      resumen: "El Gobierno confirmó que el concurso docente abierto ofertará 26.741 plazas en instituciones educativas oficiales de todo el país. La viceministra Maritza Molina declaró: \"Hoy podemos decirle al país que este proceso de selección es una realidad\". El objetivo es reducir la provisionalidad en colegios públicos y fortalecer la planta docente mediante meritocracia.",
+      accion: "Si aún no tienes cuenta en SIMO (cnsc.gov.co), créala ya. Cuando se publique la OPEC en septiembre, podrás filtrar vacantes por municipio, cargo y área. Prepara tus soportes de títulos y experiencia — solo lo certificado puntúa.",
+      url: "https://www.nacionpaisa.com/gobierno-anuncia-concurso-docente-con-26-741-vacantes-para-instituciones-educativas-oficiales/"
+    },
+    {
+      fecha: "2026-07-22",
+      tag: "Normativo",
+      titulo: "MEN ajusta normas en paralelo: cambios al manual de competencias y al Decreto 1075",
+      resumen: "El Ministerio de Educación está actualizando la Resolución 003842 de 2022 (Manual de Funciones, Requisitos y Competencias) y el Decreto 1075 de 2015 (procedimiento de selección). Estos ajustes definirán los títulos profesionales aceptados, la experiencia mínima exigida, la tabla de valoración de antecedentes y el protocolo de entrevista. La CNSC confirmó que los cambios se realizan en paralelo sin retrasar la convocatoria.",
+      accion: "Pendiente de confirmación: la tabla de valoración de antecedentes definirá cuánto puntúan posgrados y experiencia. Si estás cursando una especialización o maestría, prioriza obtener el título antes de la inscripción (nov-dic 2026).",
+      url: "https://grupogeard.com/co/blog/concursos-docentes/docente-abierto/actualizacion-concurso-docente-abierto-2026/"
+    },
     {
       fecha: "2026-07-19",
       tag: "Oficial",
