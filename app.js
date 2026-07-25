@@ -547,26 +547,10 @@ const LANG_EN = {
   arSearch:'Search videos...', arFetch:'▶️ Fetch transcript',
   arSearchBtn:'🔍', arLoading:'⏳ Loading…', arSearching:'⏳ Searching…',
 };
-let LANG = (localStorage.getItem('lang_concursoDocente') || ((navigator.language||'es').startsWith('es')?'es':'en')) === 'en' ? LANG_EN : LANG_ES;
+localStorage.removeItem('lang_concursoDocente');
+let LANG = LANG_ES;
 
 // ─── Lógica del curso (no necesitas tocar nada debajo de esta línea) ───
-function toggleLang() {
-  const isEN = LANG === LANG_EN;
-  LANG = isEN ? LANG_ES : LANG_EN;
-  localStorage.setItem('lang_concursoDocente', isEN ? 'es' : 'en');
-  document.getElementById('langBtn').textContent = LANG.langBtn;
-  ['heroBadge','heroTop','heroMain','heroSub','heroCurriculum','heroPhases','heroLessons','heroWeeks','progressLabel','resetBtn'].forEach(id => {
-    const el = document.getElementById(id); if(!el) return;
-    const map = {heroBadge:`<span class="dot"></span> ${LANG.badge}`,heroTop:LANG.heroTop,heroMain:LANG.heroMain,heroSub:LANG.heroSub,heroCurriculum:LANG.heroCurriculum,heroPhases:LANG.phases,heroLessons:LANG.lessons,heroWeeks:LANG.weeks,progressLabel:LANG.progressLabel,resetBtn:LANG.resetBtn};
-    id==='heroBadge' ? el.innerHTML=map[id] : el.textContent=map[id];
-  });
-  document.getElementById('tocBar').innerHTML=`<span class="toc-label">${LANG.tocLabel}</span>`;
-  renderToc(); addControlBtns();
-  ['marquee','phasesContainer','stackSection','timelineSection'].forEach(id=>document.getElementById(id).innerHTML='');
-  renderMarquee(); renderPhases(); renderStack(); renderTimeline();
-  document.getElementById('searchInput').placeholder=LANG.searchPlaceholder;
-  updateUI();document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));initTocHL(); if(currentDrawerLesson) openDrawer(currentDrawerLesson);
-}
 function addControlBtns() {
   if(!document.getElementById('themeBtn')){
     const tb=document.createElement('button');tb.id='themeBtn';tb.onclick=toggleTheme;
@@ -612,7 +596,7 @@ function openDrawer(lessonId){
   document.getElementById('drawer').classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeDrawer(){document.getElementById('drawerOverlay').classList.remove('open');document.getElementById('drawer').classList.remove('open');document.body.style.overflow='';currentDrawerLesson=null;}
+function closeDrawer(){var d=document.getElementById('drawer');var o=document.getElementById('drawerOverlay');d.querySelectorAll('video,audio').forEach(function(m){m.pause();});if(document.fullscreenElement)document.exitFullscreen().catch(function(){});if(document.webkitFullscreenElement&&document.webkitExitFullscreen)document.webkitExitFullscreen();o.classList.remove('open');o.style.pointerEvents='';d.classList.remove('open');d.style.transform='';document.body.style.overflow='';document.body.style.overflowX='hidden';document.documentElement.style.overflowX='hidden';currentDrawerLesson=null;window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;setTimeout(function(){window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;},150);}
 function navLesson(dir){const idx=ALL_IDS.indexOf(currentDrawerLesson);const next=idx+dir;if(next>=0&&next<ALL_IDS.length)openDrawer(ALL_IDS[next]);}
 function renderToc(){const bar=document.getElementById('tocBar');PHASES.forEach(p=>{const a=document.createElement('a');a.className='toc-chip';a.href='#phase-'+p.id;a.style.setProperty('--accent',p.color);a.dataset.phase=p.id;a.innerHTML=`<span class="chip-num">${p.num}</span><span class="chip-check">✓</span>${p.short||p.title.split(' ').slice(0,2).join(' ')}`;bar.appendChild(a);});}
 function renderMarquee(){document.getElementById('marquee').innerHTML=[...TOOLS,...TOOLS].map(t=>`<span class="brand-chip"><span class="em">${t.icon}</span>${t.name}</span>`).join('');}
