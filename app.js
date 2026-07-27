@@ -628,14 +628,14 @@ window.QUIZZES = {
     "a": 2
    },
    {
-    "q": "¿Qué puntaje mínimo necesita un docente de aula para superar la prueba eliminatoria?",
+    "q": "Un aspirante obtiene un puntaje muy alto en la valoración de antecedentes, pero no alcanza el mínimo exigido en la prueba escrita eliminatoria. ¿Qué ocurre con su proceso en el concurso?",
     "o": [
-     "60 sobre 100",
-     "65 sobre 100",
-     "70 sobre 100",
-     "80 sobre 100"
+     "Continúa en el concurso, porque el alto puntaje en antecedentes compensa el resultado de la prueba eliminatoria.",
+     "Queda excluido del proceso: al no superar la prueba eliminatoria, no se le contabilizan las demás valoraciones.",
+     "Pasa a la lista de elegibles, pero ubicado en un puesto inferior por el bajo resultado en la prueba.",
+     "Se le habilita presentar de nuevo, en una segunda fecha, únicamente la prueba eliminatoria."
     ],
-    "a": 0
+    "a": 1
    },
    {
     "q": "En una pregunta de juicio situacional del concurso, para elegir la opción correcta conviene…",
@@ -723,34 +723,34 @@ window.QUIZZES = {
   "title": "📝 Quiz — Aptitudes básicas",
   "qs": [
    {
-    "q": "La tesis de un texto argumentativo es…",
+    "q": "Lee el fragmento: «Aunque muchos afirman que los celulares solo distraen en clase, prohibirlos por completo es un error: bien orientados, se vuelven herramientas de consulta y creación que enriquecen el aprendizaje». ¿Cuál es la tesis del autor?",
     "o": [
-     "El primer párrafo completo del texto argumentativo, donde aparece el tema",
-     "La idea que introduce el tema de forma general sin tomar posición al respecto",
-     "El resumen de las conclusiones que el autor presenta al final de su exposición",
-     "La postura central que el autor defiende con argumentos"
+     "Los celulares distraen a los estudiantes durante las clases.",
+     "Prohibir por completo los celulares en clase es un error, pues bien orientados favorecen el aprendizaje.",
+     "Los celulares permiten consultar información y crear contenidos.",
+     "Existe un debate sobre el uso del celular en el aula."
     ],
-    "a": 3
+    "a": 1
    },
    {
-    "q": "Una IE tiene 800 estudiantes y la deserción fue del 5%. ¿Cuántos estudiantes desertaron?",
+    "q": "En un grado de 25 estudiantes, en el primer periodo aprobaron matemáticas 20 y en el segundo aprobaron 15. ¿Cómo varió el porcentaje de aprobación entre los dos periodos?",
     "o": [
-     "40",
-     "50",
-     "80",
-     "45"
+     "Disminuyó: pasó del 80% al 60% de aprobación.",
+     "Disminuyó un 5%, porque aprobaron cinco estudiantes menos que en el primer periodo.",
+     "Se mantuvo estable, ya que en ambos periodos aprobó más de la mitad del curso.",
+     "Aumentó, porque 15 de 25 sigue siendo la mayoría del grupo."
     ],
     "a": 0
    },
    {
-    "q": "En preguntas de competencias blandas, la opción correcta suele privilegiar…",
+    "q": "En la semana institucional, tu compañera de área te propone que, para agilizar, ustedes dos definan por su cuenta la malla y las horas del proyecto transversal y luego se lo presenten ya cerrado al resto del equipo de grado. El proyecto involucra a las demás áreas. La actuación más pertinente es…",
     "o": [
-     "La autoridad y la jerarquía institucional",
-     "La eficiencia individual sobre el trabajo en equipo",
-     "El diálogo, la colaboración y la ética profesional",
-     "La obediencia incondicional a las directrices del rector"
+     "Llevar una propuesta base al espacio colectivo del equipo de grado para construir el reparto de horas con las áreas implicadas antes de cerrarlo.",
+     "Cerrar la propuesta con tu compañera y presentarla al equipo, ya que dos docentes del área bastan para agilizar la planeación.",
+     "Pedir al rector que apruebe primero la malla que ustedes dos definan, para que el equipo la acate sin discusión.",
+     "Aceptar la propuesta de tu compañera, pues evitar más reuniones reduce la sobrecarga del equipo."
     ],
-    "a": 2
+    "a": 0
    }
   ]
  },
