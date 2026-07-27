@@ -23,21 +23,24 @@
     },
     novedades: {
       kicker: "Que no se te pase nada",
-      titulo: "¿Quieres más simulacros y las fechas oficiales?",
-      texto: "Te avisamos por WhatsApp cuando salgan nuevas fechas del concurso, cambios en la convocatoria y más simulacros de práctica. Sin spam: solo lo importante.",
-      cta: { text: "Sí, mantenme al día 📩", href: wa("Hola Juan Camilo, tomé el curso del Concurso Docente. Quiero recibir más simulacros y las novedades oficiales del concurso.") }
+      titulo: "Descarga el cronograma oficial completo",
+      texto: "Vacantes, fechas de la OPEC, inscripciones y qué documentos preparar — todo en un PDF de 1 página, con fuentes verificadas (CNSC y MEN).",
+      cta: { text: "📅 Descargar cronograma gratis", href: "/Cronograma-Concurso-Docente-2026.pdf" },
+      alt: { text: "…o que te avise por WhatsApp 📩", href: wa("Hola Juan Camilo, tomé el curso del Concurso Docente. Quiero que me avises cuando haya novedades o cambios en la convocatoria.") }
     },
     cursos: {
       kicker: "Una idea para después del concurso",
       titulo: "¿Te gustó cómo está hecho este curso?",
-      texto: "Lo construí con un método que también enseño: crear cursos digitales como este y venderlos. Si te interesa una fuente de ingresos con lo que ya sabes enseñar, cuéntanos tu idea.",
-      cta: { text: "Me interesa → cuéntanos", href: wa("Hola Juan Camilo, tomé el curso del Concurso Docente. Me interesa aprender a crear y vender cursos digitales como este.") }
+      texto: "Te cuento el método completo en una guía gratis: backward design, IA para generar contenido validado, y cómo un curso gratis se convierte en el imán de un negocio real.",
+      cta: { text: "📘 Descargar la guía gratis", href: "/Metodo-Crea-tu-Curso-con-IA.pdf" },
+      alt: { text: "Quiero ir más allá → cuéntame tu idea", href: wa("Hola Juan Camilo, tomé el curso del Concurso Docente. Me interesa aprender a crear y vender cursos digitales como este.") }
     },
     automatizar: {
       kicker: "Recupera tu tiempo",
-      titulo: "¿Ahogado en formatos y planeaciones?",
-      texto: "Muchos docentes pierden más de 15 horas a la semana en tareas administrativas. Cuéntanos qué formato te quita más tiempo y hablamos de cómo automatizarlo con IA.",
-      cta: { text: "Cuéntanos qué automatizar", href: wa("Hola Juan Camilo, tomé el curso del Concurso Docente. Me gustaría automatizar este formato o tarea administrativa: [escríbelo].") }
+      titulo: "8 prompts de IA para planeación, rúbricas y feedback",
+      texto: "Pack gratis con prompts listos para copiar y pegar en Claude o ChatGPT: planeación de clase, rúbricas, retroalimentación y gestión de aula.",
+      cta: { text: "🍎 Descargar el pack gratis", href: "/Pack-8-Prompts-Planeacion-Docente.pdf" },
+      alt: { text: "¿Algo más específico? Escríbeme 📩", href: wa("Hola Juan Camilo, tomé el curso del Concurso Docente. Me gustaría automatizar este formato o tarea administrativa: [escríbelo].") }
     }
   };
 
