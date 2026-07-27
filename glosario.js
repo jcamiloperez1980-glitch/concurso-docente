@@ -160,6 +160,196 @@
       def: 'Modelo colombiano para el aula multigrado rural: guías de aprendizaje diferenciadas por nivel, monitores estudiantiles, trabajo colaborativo y vínculo con la comunidad. Permite ofrecer los cinco grados de primaria con uno a tres docentes.',
       aula: 'En multigrado, el patrón ganador es tema común + actividades diferenciadas por nivel + tutoría entre pares, nunca "la misma clase para todos".',
       src: { t: 'Modelo Escuela Nueva — guías de docente y estudiante descargables (MEN)', u: 'https://www.mineducacion.gov.co/portal/Preescolar-basica-y-media/Modelos-Educativos-Flexibles/340089:Escuela-Nueva', tipo: 'Documento oficial del MEN' }
+    },
+
+    // ── El concurso: proceso y etapas ────────────────────────────────────────
+    {
+      t: ['SIMO'],
+      titulo: 'SIMO',
+      def: 'Sistema de apoyo para la Igualdad, el Mérito y la Oportunidad: la plataforma de la CNSC donde te inscribes, cargas soportes y consultas resultados. Todo el concurso se tramita ahí.',
+      aula: 'Solo puntúa lo que subas certificado y dentro del plazo. Un título real sin soporte cargado vale cero.',
+      src: { t: 'SIMO — plataforma oficial de la CNSC', u: 'https://simo.cnsc.gov.co', tipo: 'Plataforma oficial' }
+    },
+    {
+      t: ['lista de elegibles'],
+      titulo: 'Lista de elegibles',
+      def: 'Listado en estricto orden de puntaje con quienes superaron todo el proceso. De ahí se nombra según el número de vacantes: el orden lo decide tu puntaje total, no el orden de inscripción.',
+      aula: 'Por eso cada punto sobre el mínimo importa: no compites contra el umbral, compites contra los demás aspirantes de tu misma vacante.',
+      src: { t: 'CNSC — Comisión Nacional del Servicio Civil', u: 'https://www.cnsc.gov.co', tipo: 'Entidad oficial' }
+    },
+    {
+      t: ['valoración de antecedentes'],
+      titulo: 'Valoración de antecedentes',
+      def: 'Prueba clasificatoria que puntúa tu formación (posgrados) y tu experiencia certificada. No elimina, pero suma al puntaje total que define tu lugar en la lista de elegibles.',
+      aula: 'Es la única parte que puedes mejorar antes del examen: reunir y certificar bien tus soportes.',
+      src: { t: 'MEN — Carrera docente y concursos', u: 'https://www.mineducacion.gov.co/portal/adelante-maestros/Carrera-Docente/Concursos/', tipo: 'Portal oficial del MEN' }
+    },
+    {
+      t: ['período de prueba', 'periodo de prueba'],
+      titulo: 'Período de prueba',
+      def: 'Etapa posterior al nombramiento que va hasta culminar el año escolar. Se cierra con evaluación de desempeño: si es satisfactoria, se inscribe en el escalafón (Decreto 1278, art. 31).',
+      aula: 'Ojo con la trampa del examen: la norma dice "año escolar", no "año calendario" ni "seis meses".',
+      src: { t: 'Decreto 1278 de 2002 — Estatuto de Profesionalización Docente', u: 'https://www.mineducacion.gov.co/1621/articles-86102_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['escalafón', 'escalafon'],
+      titulo: 'Escalafón docente',
+      def: 'Estructura de grados y niveles salariales del Decreto 1278. Se asciende de grado por formación y de nivel dentro del grado por evaluación de competencias, no por antigüedad.',
+      aula: 'Un posgrado es lo que más mueve tu ubicación en el escalafón — y también suma en antecedentes del concurso.',
+      src: { t: 'Decreto 1278 de 2002 — Estatuto de Profesionalización Docente', u: 'https://www.mineducacion.gov.co/1621/articles-86102_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+
+    // ── Normativa general ───────────────────────────────────────────────────
+    {
+      t: ['Ley 115'],
+      titulo: 'Ley 115 de 1994 (Ley General de Educación)',
+      def: 'La norma marco del sistema educativo colombiano: fines de la educación, estructura del servicio, autonomía escolar, PEI, gobierno escolar y áreas obligatorias.',
+      aula: 'Cuando una pregunta va de fines de la educación, autonomía o PEI, la respuesta se ancla aquí.',
+      src: { t: 'Ley 115 de 1994 — texto completo', u: 'https://www.mineducacion.gov.co/1621/articles-85906_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['Decreto 1278'],
+      titulo: 'Decreto 1278 de 2002',
+      def: 'Estatuto de Profesionalización Docente: regula ingreso (solo por concurso de méritos), período de prueba, escalafón, evaluación y retiro de quienes se vincularon desde 2002.',
+      aula: 'Convive con el Decreto 2277 de 1979, que rige a los docentes vinculados antes. Aplicar uno al otro es error clásico del examen.',
+      src: { t: 'Decreto 1278 de 2002 — texto completo', u: 'https://www.mineducacion.gov.co/1621/articles-86102_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['PEI'],
+      titulo: 'PEI — Proyecto Educativo Institucional',
+      def: 'La carta de navegación de cada institución (art. 73, Ley 115). Debe construirse con participación de la comunidad educativa y responder al contexto propio; por eso no se puede copiar de otro colegio.',
+      aula: 'Un PEI que nadie usa es letra muerta: vive cuando se revisa periódicamente contra la práctica real del aula.',
+      src: { t: 'Ley 115 de 1994 — artículo 73', u: 'https://www.mineducacion.gov.co/1621/articles-85906_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['Ley 715'],
+      titulo: 'Ley 715 de 2001',
+      def: 'Distribuye competencias y recursos entre nación, departamentos y municipios. Define qué le toca a la entidad territorial certificada (nombrar docentes, calendario) y qué al rector (dirigir la institución).',
+      aula: 'La pregunta de fondo casi siempre es "¿a quién le corresponde esto?". El rector no vincula ni nombra personal: eso es de la ETC.',
+      src: { t: 'Ley 715 de 2001 — texto completo', u: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=4452', tipo: 'Norma oficial' }
+    },
+    {
+      t: ['entidad territorial certificada', 'ETC'],
+      titulo: 'ETC — Entidad territorial certificada',
+      def: 'Departamento, distrito o municipio certificado para administrar el servicio educativo: nombra y traslada docentes, fija el calendario escolar y autoriza aperturas o cierres de sedes.',
+      aula: 'Si la respuesta implica vincular personal, cerrar una sede o mover el calendario, la competencia es de la ETC, no de la institución.',
+      src: { t: 'Ley 715 de 2001 — texto completo', u: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=4452', tipo: 'Norma oficial' }
+    },
+    {
+      t: ['gobierno escolar'],
+      titulo: 'Gobierno escolar',
+      def: 'Lo integran tres órganos (Decreto 1860, art. 20): el rector, el consejo directivo y el consejo académico. El consejo de padres y el consejo estudiantil son de participación, no de gobierno.',
+      aula: 'Meter al consejo de padres dentro del gobierno escolar es un distractor frecuente: participa, pero no gobierna.',
+      src: { t: 'Decreto 1860 de 1994 — texto oficial', u: 'https://www.mineducacion.gov.co/1621/articles-86240_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['consejo directivo'],
+      titulo: 'Consejo directivo',
+      def: 'Máxima instancia de participación y orientación académico-administrativa. ADOPTA el PEI y el manual de convivencia, aprueba el presupuesto del Fondo de Servicios Educativos y resuelve conflictos que no se resolvieron en instancias previas.',
+      aula: 'Regla mnemotécnica: el académico ORIENTA lo pedagógico, el directivo ADOPTA y aprueba.',
+      src: { t: 'Decreto 1860 de 1994 — texto oficial', u: 'https://www.mineducacion.gov.co/1621/articles-86240_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['consejo académico'],
+      titulo: 'Consejo académico',
+      def: 'Instancia superior para orientar lo pedagógico: plan de estudios, evaluación institucional, y recomendación de la promoción anticipada. Orienta y recomienda; no adopta documentos institucionales.',
+      aula: 'Si la pregunta es sobre plan de estudios o criterios de evaluación, la instancia es esta — no el consejo directivo.',
+      src: { t: 'Decreto 1860 de 1994 — texto oficial', u: 'https://www.mineducacion.gov.co/1621/articles-86240_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['Fondo de Servicios Educativos', 'FSE'],
+      titulo: 'FSE — Fondo de Servicios Educativos',
+      def: 'Cuenta de la institución para gastos de funcionamiento y calidad, con el rector como ordenador del gasto y el consejo directivo aprobando el presupuesto. Tiene destinaciones prohibidas.',
+      aula: 'Con FSE NO se paga nómina docente ni bonificaciones. Sí mantenimiento y material pedagógico.',
+      src: { t: 'Decreto 1075 de 2015 — Decreto Único Reglamentario de Educación', u: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=77913', tipo: 'Norma oficial' }
+    },
+    {
+      t: ['personero'],
+      titulo: 'Personero estudiantil',
+      def: 'Estudiante del último grado, elegido por votación de todos los estudiantes, encargado de promover y defender los derechos de sus compañeros. NO es el representante de los estudiantes ante el consejo directivo.',
+      aula: 'Ese representante es otro estudiante del último grado, elegido por el consejo estudiantil. Confundirlos es distractor recurrente.',
+      src: { t: 'Decreto 1860 de 1994 — artículo 28', u: 'https://www.mineducacion.gov.co/1621/articles-86240_archivo_pdf.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['Ley 1098'],
+      titulo: 'Ley 1098 de 2006 (Código de Infancia y Adolescencia)',
+      def: 'Establece la protección integral de niños, niñas y adolescentes, el interés superior del menor y la prevalencia de sus derechos sobre los de los demás.',
+      aula: 'Ante indicios de vulneración, el docente reporta y activa la ruta. No investiga, no reúne pruebas, no confronta a la familia.',
+      src: { t: 'Ley 1098 de 2006 — texto completo', u: 'https://www.icbf.gov.co/cargues/avance/docs/ley_1098_2006.htm', tipo: 'Norma oficial (ICBF)' }
+    },
+    {
+      t: ['corresponsabilidad'],
+      titulo: 'Corresponsabilidad',
+      def: 'La protección de la niñez es responsabilidad conjunta de familia, sociedad y Estado — y la escuela es parte del Estado. Por eso el docente tiene deber de actuar, no opción de hacerlo.',
+      aula: 'Omitir el reporte es falta. El reporte procede por indicios: no necesitas pruebas para activar la ruta.',
+      src: { t: 'Ley 1098 de 2006 — texto completo', u: 'https://www.icbf.gov.co/cargues/avance/docs/ley_1098_2006.htm', tipo: 'Norma oficial (ICBF)' }
+    },
+    {
+      t: ['restablecimiento de derechos'],
+      titulo: 'Restablecimiento de derechos',
+      def: 'Conjunto de actuaciones que las autoridades adelantan para devolver a un menor el ejercicio pleno de un derecho vulnerado. Lo lidera el ICBF o la comisaría de familia, con la escuela colaborando.',
+      aula: 'Cuando el ICBF pide información académica dentro de un proceso, la institución colabora por canales formales: no exige orden judicial.',
+      src: { t: 'Ley 1098 de 2006 — texto completo', u: 'https://www.icbf.gov.co/cargues/avance/docs/ley_1098_2006.htm', tipo: 'Norma oficial (ICBF)' }
+    },
+    {
+      t: ['Cátedra de la Paz', 'Catedra de la Paz'],
+      titulo: 'Cátedra de la Paz (Ley 1732 de 2014)',
+      def: 'De obligatoria implementación en todas las instituciones educativas del país. Busca crear un espacio de aprendizaje y reflexión sobre cultura de paz, y se articula con competencias ciudadanas y memoria histórica.',
+      aula: 'Al enseñar el conflicto armado: múltiples voces, enfoque de derechos, cuidado emocional y orientación a la no repetición. Ni versión única ni evasión del tema.',
+      src: { t: 'Ley 1732 de 2014 — texto oficial', u: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=59313', tipo: 'Norma oficial' }
+    },
+
+    // ── Evaluación y currículo ──────────────────────────────────────────────
+    {
+      t: ['SIEE'],
+      titulo: 'SIEE — Sistema Institucional de Evaluación de los Estudiantes',
+      def: 'Cada institución define en su SIEE los criterios de evaluación y promoción, la escala institucional y su equivalencia con la nacional, y las estrategias de apoyo (Decreto 1290, art. 4).',
+      aula: 'Que algo no esté en el SIEE no anula un derecho de la norma superior: la promoción anticipada procede aunque el SIEE no la regule.',
+      src: { t: 'Decreto 1290 de 2009 — texto oficial', u: 'https://www.mineducacion.gov.co/1621/articles-187765_archivo_pdf_decreto_1290.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['promoción anticipada'],
+      titulo: 'Promoción anticipada',
+      def: 'Figura del Decreto 1290 (art. 7): el consejo académico recomienda promover a un estudiante con desempeño superior, con aval institucional y consentimiento de los acudientes.',
+      aula: 'No la decide la familia sola, ni un examen único, ni es automática por buenas notas: es vía institucional con deliberación.',
+      src: { t: 'Decreto 1290 de 2009 — artículo 7', u: 'https://www.mineducacion.gov.co/1621/articles-187765_archivo_pdf_decreto_1290.pdf', tipo: 'Norma oficial (MEN)' }
+    },
+    {
+      t: ['estándares básicos'],
+      titulo: 'Estándares básicos de competencias',
+      def: 'Referentes nacionales de lo que todo estudiante debe saber y saber hacer, organizados por GRUPOS de grados (1-3, 4-5, 6-7, 8-9, 10-11), no grado por grado.',
+      aula: 'Esa es la distinción que más preguntan: los estándares van por grupos de grados; los DBA sí van por grado individual.',
+      src: { t: 'Estándares básicos de competencias — MEN', u: 'https://www.mineducacion.gov.co/1621/article-116042.html', tipo: 'Referente oficial del MEN' }
+    },
+    {
+      t: ['DBA'],
+      titulo: 'DBA — Derechos Básicos de Aprendizaje',
+      def: 'Conjunto de aprendizajes estructurantes por grado. Complementan a los estándares y orientan la planeación; no los reemplazan ni son un temario obligatorio en orden.',
+      aula: 'Si un DBA de tu grado no aparece explícito en los estándares, no hay contradicción: operan en niveles distintos y se articulan.',
+      src: { t: 'Derechos Básicos de Aprendizaje — Colombia Aprende', u: 'https://www.colombiaaprende.edu.co/contenidos/coleccion/derechos-basicos-de-aprendizaje', tipo: 'Referente oficial del MEN' }
+    },
+
+    // ── Educación inicial y áreas ───────────────────────────────────────────
+    {
+      t: ['actividades rectoras'],
+      titulo: 'Actividades rectoras de la primera infancia',
+      def: 'Juego, arte, literatura y exploración del medio. No son "materias" ni relleno: son las vías privilegiadas por las que el niño aprende y se desarrolla en educación inicial.',
+      aula: 'Escolarizar el preescolar con planas, dictados y tareas tipo primaria es el error que más castiga el examen en este nivel.',
+      src: { t: 'Lineamientos de educación inicial y Decreto 2247 — MEN', u: 'https://www.mineducacion.gov.co/1780/articles-341880_recurso_1.pdf', tipo: 'Documento oficial del MEN' }
+    },
+    {
+      t: ['dimensiones del desarrollo'],
+      titulo: 'Dimensiones del desarrollo',
+      def: 'Ejes desde los que se observa el desarrollo integral en preescolar: corporal, cognitiva, comunicativa, socioafectiva, estética, espiritual y ética. La evaluación se describe por dimensiones.',
+      aula: 'En preescolar la evaluación es cualitativa y descriptiva, y no hay reprobación (Decreto 2247).',
+      src: { t: 'Lineamientos de educación inicial y Decreto 2247 — MEN', u: 'https://www.mineducacion.gov.co/1780/articles-341880_recurso_1.pdf', tipo: 'Documento oficial del MEN' }
+    },
+    {
+      t: ['indagación'],
+      titulo: 'Indagación científica',
+      def: 'Enfoque en el que el estudiante recorre el ciclo completo: observa un fenómeno, formula hipótesis propias, diseña cómo contrastarlas y construye el concepto desde la evidencia.',
+      aula: 'Que el docente demuestre y el estudiante registre NO es indagación: falta que el estudiante genere la pregunta y contraste su hipótesis.',
+      src: { t: 'Estándares básicos de competencias en matemáticas y ciencias — MEN', u: 'https://www.mineducacion.gov.co/1621/articles-340021_recurso_1.pdf', tipo: 'Referente oficial del MEN' }
     }
   ];
 
@@ -246,40 +436,73 @@
   }
 
   // ── Marcado: primera aparición de cada término, solo en nodos de texto ──────
-  function marcar(root) {
-    TERMINOS.forEach(function (d) {
-      for (var i = 0; i < d.t.length; i++) {
-        if (marcarUno(root, d, d.t[i])) return; // marcado: pasa al siguiente término
-      }
-    });
-  }
+  // Dos reglas contra la saturación visual:
+  //   1. Máximo MAX_POR_LECCION marcas en toda la lección.
+  //   2. Máximo una marca por bloque de nivel superior. Sin esto, una tabla que
+  //      lista cinco modelos pedagógicos en filas contiguas recibía cinco
+  //      subrayados apiñados en la misma pantalla.
+  var MAX_POR_LECCION = 8;
 
-  function marcarUno(root, d, term) {
-    var re = reFor(term);
+  function marcar(root) {
+    // 1. Nodos de texto marcables, en orden de documento
+    var nodos = [];
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode: function (n) {
         if (!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
-        // No marcar dentro de enlaces, código, títulos ni sobre un término ya marcado
+        // Nunca dentro de enlaces, código, títulos ni sobre una marca existente
         if (n.parentElement.closest('a,code,pre,h1,h2,h3,h4,.glo,.glo-card')) {
           return NodeFilter.FILTER_REJECT;
         }
-        return re.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
       }
     });
-    var node = walker.nextNode();
-    if (!node) return false;
+    var n;
+    while ((n = walker.nextNode())) nodos.push(n);
 
-    var m = re.exec(node.nodeValue);
-    if (!m) return false;
-    var after = node.splitText(m.index);
-    after.nodeValue = after.nodeValue.slice(m[0].length);
-    var span = document.createElement('span');
-    span.className = 'glo';
-    span.textContent = m[0];
-    span.title = 'Ver explicación breve';
-    span.onclick = function (e) { e.stopPropagation(); toggle(span, d); };
-    after.parentNode.insertBefore(span, after);
-    return true;
+    // 2. Primera posición de cada término DENTRO DE ESTA LECCIÓN.
+    //    La prioridad la da el texto, no el orden de este archivo: así gana el
+    //    término central de la lección (en C3, "gobierno escolar") y no uno que
+    //    aparece de refilón en una pregunta del final ("retroalimentación").
+    var cand = [];
+    TERMINOS.forEach(function (d) {
+      for (var i = 0; i < d.t.length; i++) {
+        var re = reFor(d.t[i]);
+        for (var k = 0; k < nodos.length; k++) {
+          if (re.test(nodos[k].nodeValue)) { cand.push({ d: d, re: re, pos: k }); return; }
+        }
+      }
+    });
+    cand.sort(function (a, b) { return a.pos - b.pos; });
+
+    // 3. Marcar respetando un bloque por marca y el tope de la lección
+    var usados = [], puestas = 0;
+    cand.forEach(function (c) {
+      if (puestas >= MAX_POR_LECCION) return;
+      // Desde su primera aparición hacia adelante, hasta hallar un bloque libre.
+      // Sin este reintento, un término cuyo bloque inicial ya está ocupado (p. ej.
+      // cuatro conceptos listados en la misma viñeta) se perdería por completo.
+      for (var k = c.pos; k < nodos.length; k++) {
+        var node = nodos[k];
+        if (!node.parentNode) continue;
+        var bloque = anchorFor(node, root);
+        if (!bloque || usados.indexOf(bloque) !== -1) continue;
+        var m = c.re.exec(node.nodeValue);
+        if (!m) continue;
+        usados.push(bloque);
+        puestas++;
+        var after = node.splitText(m.index);
+        after.nodeValue = after.nodeValue.slice(m[0].length);
+        var span = document.createElement('span');
+        span.className = 'glo';
+        span.textContent = m[0];
+        span.title = 'Ver explicación breve';
+        span.onclick = (function (sp, d) {
+          return function (e) { e.stopPropagation(); toggle(sp, d); };
+        })(span, c.d);
+        after.parentNode.insertBefore(span, after);
+        return;
+      }
+    });
   }
 
   // ── Enganche con el drawer ─────────────────────────────────────────────────
