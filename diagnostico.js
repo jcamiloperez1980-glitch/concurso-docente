@@ -238,6 +238,12 @@
     '.drawer-body a.dg-go:hover{color:#fff;filter:brightness(1.07)}' +
     '.dg-wait{margin:26px 0 4px;padding:18px 20px;border:1px solid var(--border);border-left:3px solid var(--claude);' +
     'border-radius:12px;background:linear-gradient(135deg,rgba(217,119,6,.07),transparent 72%)}' +
+    '.dg-wait-kicker{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;' +
+    'text-transform:uppercase;color:var(--claude);margin-bottom:6px}' +
+    '.dg-wait-title{font-size:16px;font-weight:800;color:var(--text);margin-bottom:10px;line-height:1.3}' +
+    '.dg-wait-p{font-size:13.5px;color:var(--muted);line-height:1.65;margin:0 0 11px}' +
+    '.dg-wait-p strong{color:var(--text)}' +
+    '.dg-wait-note{font-size:12px;color:var(--dim);line-height:1.5;margin-top:9px}' +
     '.dg-nudge{margin:0 0 18px;padding:12px 16px;border-radius:10px;font-size:13px;line-height:1.6;' +
     'background:var(--card-2);border:1px solid var(--border);color:var(--muted)}' +
     '.dg-nudge strong{color:var(--text)}';
@@ -360,16 +366,73 @@
   }
 
   // ── Resultado: ruta + plan + lista de espera ────────────────────────────────
-  // Un directivo no tiene "área disciplinar": lo suyo es gestión, no una materia.
-  function waitTitulo(meta, area) {
-    if (meta.directivo) return 'Estoy armando un banco de casos de gestión directiva para ' + meta.label;
-    if (!meta.area) return 'Estoy armando un banco de casos específicos para ' + meta.label;
-    return 'Estoy armando simulacros específicos de ' + area;
+  function zonaFrase(z) {
+    if (z === 'urbana') return 'zona urbana';
+    if (z === 'rural') return 'zona rural';
+    return 'sin preferencia de zona';
   }
 
+  // Copy de la lista de espera. Tres variantes reales, no una plantilla con el
+  // nombre sustituido: a un directivo no le sirve "todo el mundo estudia
+  // normativa" — la normativa es justamente lo suyo.
+  //
+  // Decisión deliberada: se dice que el banco SERÁ PAGO. Una lista de espera que
+  // calla el precio mide "¿te gustaría algo gratis?", y a eso todo el mundo dice
+  // que sí; la señal de demanda quedaría inservible para decidir qué construir.
+  function waitCopy(meta, area) {
+    if (meta.area) {
+      // Eligió "Otra" sin escribir cuál: se habla en genérico y el mensaje de
+      // WhatsApp le pide el nombre del área, que es justo el dato que falta.
+      var nombrada = !!area;
+      return {
+        titulo: 'Falta lo tuyo: ' + (nombrada ? area : 'tu área'),
+        comun: 'Pedagogía y normativa las estudia todo el mundo — y las tienes gratis acá. ' +
+               'El concurso se desempata en tu área, y ahí no hay nada bueno gratis.',
+        que: 'Estoy armando los bancos por área' + (nombrada ? ', y <strong>' + esc(area) + '</strong> es candidata' : '') +
+             ': preguntas tipo examen con la explicación de por qué cada distractor está mal, igual que en el curso. ' +
+             'Será pago — escribirlo bien toma semanas por área, y solo alcanzo a hacer 3 antes de las inscripciones.',
+        pedido: nombrada
+          ? 'Dime que quieres ' + esc(area) + ', y de paso qué tema se te atraviesa. Lo uso para armar las preguntas.'
+          : 'Dime cuál es tu área y qué tema se te atraviesa. Lo uso para armar las preguntas.',
+        cta: nombrada ? 'Quiero el banco de ' + area + ' →' : 'Quiero el banco de mi área →',
+        waAsunto: nombrada ? 'Quiero el banco de ' + area : 'Quiero el banco de mi área',
+        waTema: nombrada ? 'El tema que más se me atraviesa es: ' : 'Mi área es ___ y el tema que más se me atraviesa es: '
+      };
+    }
+    if (meta.directivo) {
+      return {
+        titulo: 'Falta lo tuyo: los casos de gestión',
+        comun: 'Las competencias pedagógicas las estudia todo aspirante — y las tienes gratis acá. ' +
+               'Tu prueba se decide en los casos de gestión directiva: convivencia, personal, recursos, ' +
+               'relación con la secretaría. Ahí no hay nada bueno gratis.',
+        que: 'Estoy armando el banco de casos para <strong>' + esc(meta.label) + '</strong>: situaciones tipo ' +
+             'examen con la explicación de por qué cada distractor está mal, igual que en el curso. Será pago — ' +
+             'escribirlo bien toma semanas por cargo, y alcanzo a hacer muy pocos antes de las inscripciones.',
+        pedido: 'Dime que quieres el de ' + esc(meta.label) + ', y de paso qué situación se te atraviesa. La uso para armar los casos.',
+        cta: 'Quiero el banco de ' + meta.label + ' →',
+        waAsunto: 'Quiero el banco de casos para ' + meta.label,
+        waTema: 'La situación de gestión que más se me atraviesa es: '
+      };
+    }
+    return {
+      titulo: 'Falta lo tuyo: los casos de tu cargo',
+      comun: 'Las competencias pedagógicas las estudia todo aspirante — y las tienes gratis acá. ' +
+             'Tu prueba se decide en los casos propios de tu cargo, y ahí no hay nada bueno gratis.',
+      que: 'Estoy armando el banco de casos para <strong>' + esc(meta.label) + '</strong>: situaciones tipo ' +
+           'examen con la explicación de por qué cada distractor está mal, igual que en el curso. Será pago — ' +
+           'escribirlo bien toma semanas por cargo, y alcanzo a hacer muy pocos antes de las inscripciones.',
+      pedido: 'Dime que quieres el de ' + esc(meta.label) + ', y de paso qué caso se te atraviesa. Lo uso para armar las preguntas.',
+      cta: 'Quiero el banco de ' + meta.label + ' →',
+      waAsunto: 'Quiero el banco de casos para ' + meta.label,
+      waTema: 'El caso que más se me atraviesa es: '
+    };
+  }
+
+  // Devuelve null si eligió "Otra" y no escribió nada: el copy no puede decir
+  // "Quiero el banco de Otra (sin especificar)".
   function areaFinal(p) {
     if (!p.area) return null;
-    if (String(p.area).indexOf('Otra') === 0) return (p.area_otra || '').trim() || 'Otra (sin especificar)';
+    if (String(p.area).indexOf('Otra') === 0) return (p.area_otra || '').trim() || null;
     return p.area;
   }
 
@@ -388,11 +451,14 @@
 
     var meta = cargoMeta(perfil.cargo);
     var area = areaFinal(perfil);
+    var wc = waitCopy(meta, area);
 
     // Señal de demanda a GA4 — esto es lo que decide qué áreas se construyen.
     track('diagnostic_complete', {
       cargo: perfil.cargo,
-      area: area || 'n/a',
+      // 'otra_sin_especificar' se distingue de 'n/a' (cargos sin área) a propósito:
+      // si aparece mucho, el selector de áreas se está quedando corto.
+      area: area || (meta.area ? 'otra_sin_especificar' : 'n/a'),
       zona: perfil.zona,
       tiempo: perfil.tiempo,
       debilidades: perfil.flojo.join(',') || 'ninguna'
@@ -448,22 +514,17 @@
         ? '<p style="font-size:13px;color:var(--muted);line-height:1.6">Como aspirante a directivo, tu puntaje mínimo hoy es <strong>70/100</strong> (hay un proyecto de decreto que propone bajarlo a 60 — revisa Novedades). Tu módulo de área disciplinar queda al final: no compites por ella.</p>'
         : '') +
       '<div class="dg-wait">' +
-        '<div style="font-family:\'JetBrains Mono\',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--claude);margin-bottom:6px">🔔 En construcción</div>' +
-        '<div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:7px;line-height:1.35">' +
-          esc(waitTitulo(meta, area)) +
-        '</div>' +
-        '<div style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:14px">' +
-          'El curso gratuito cubre lo común a todos. Lo que falta es el banco de preguntas de ' +
-          '<strong style="color:var(--text)">tu</strong> ' + (meta.area ? 'área' : 'cargo') + ', ' +
-          'con la explicación de por qué cada distractor está mal. Voy a construir primero ' +
-          (meta.area ? 'las áreas más pedidas — dime la tuya' : 'los cargos más pedidos — dime el tuyo') +
-          ' y te aviso cuando esté.' +
-        '</div>' +
+        '<div class="dg-wait-kicker">🎯 Lo que sigue</div>' +
+        '<div class="dg-wait-title">' + esc(wc.titulo) + '</div>' +
+        '<p class="dg-wait-p">' + wc.comun + '</p>' +
+        '<p class="dg-wait-p">' + wc.que + '</p>' +
+        '<p class="dg-wait-p">' + wc.pedido + '</p>' +
         '<a class="dg-go" id="dgWait" href="' + WA + '?text=' +
-          encodeURIComponent('Hola Juan Camilo, tomé el curso del Concurso Docente. Hice el diagnóstico y soy: ' +
-            meta.label + (area ? ' — área: ' + area : '') + ' — zona ' + perfil.zona +
-            '. Quiero entrar a la lista de espera de los simulacros de mi área.') +
-        '" target="_blank" rel="noopener">Avísame cuando esté lista 📩</a>' +
+          encodeURIComponent('Hola Juan Camilo, tomé el curso del Concurso Docente. ' + wc.waAsunto +
+            ' (' + (meta.area ? meta.label.toLowerCase() + ', ' : '') + zonaFrase(perfil.zona) + '). ' +
+            wc.waTema) +
+        '" target="_blank" rel="noopener">' + esc(wc.cta) + '</a>' +
+        '<div class="dg-wait-note">Es para saber qué construyo primero. Hoy no estás comprando nada.</div>' +
       '</div>' +
       '<p style="margin-top:18px;font-size:12px;color:var(--muted)">Tu perfil se guarda solo en este navegador (localStorage). ' +
         'Puedes rehacer el diagnóstico cuando quieras desde 🧭 Mi ruta.</p>';
