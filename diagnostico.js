@@ -34,7 +34,9 @@
     { v: 'apoyo', label: 'Docente de apoyo pedagógico (inclusión)', area: false },
     { v: 'rector', label: 'Rector', area: false, directivo: true },
     { v: 'coordinador', label: 'Coordinador', area: false, directivo: true },
-    { v: 'director_rural', label: 'Director rural', area: false, directivo: true }
+    // zonaFija: el cargo ya define la zona — preguntarla después sería
+    // redundante (y dejaría marcar "Urbana" para un cargo rural por definición).
+    { v: 'director_rural', label: 'Director rural', area: false, directivo: true, zonaFija: 'rural' }
   ];
 
   var AREAS = [
@@ -294,13 +296,15 @@
         opts: AREAS.map(function (a) { return { v: a, label: a }; })
       });
     }
-    lista.push(
-      {
+    if (!cargoMeta(draft.cargo).zonaFija) {
+      lista.push({
         key: 'zona', multi: false,
         q: '¿En qué zona quieres tu plaza?',
         hint: 'El MEN confirmó que la prueba incluirá contextos territoriales. Esto cambia qué casos debes practicar.',
         opts: ZONAS.map(function (z) { return { v: z.v, label: z.label }; })
-      },
+      });
+    }
+    lista.push(
       {
         key: 'tiempo', multi: false,
         q: '¿Cuánto puedes estudiar al día, de verdad?',
@@ -361,6 +365,12 @@
         draft[s.key] = arr;
       } else {
         draft[s.key] = v;
+        // El cargo puede traer la zona implícita (p.ej. Director rural):
+        // se fija sola, incluso si el paso de zona nunca se muestra.
+        if (s.key === 'cargo') {
+          var zf = cargoMeta(v).zonaFija;
+          if (zf) draft.zona = zf;
+        }
       }
       renderPaso();
     });
