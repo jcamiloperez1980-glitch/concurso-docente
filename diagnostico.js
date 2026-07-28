@@ -142,8 +142,10 @@
       } else {
         s = flojas.indexOf(c.v) !== -1 ? 0.2 : 0.7;
       }
-      // Un directivo no compite por área disciplinar: baja al final.
-      if (c.v === 'area' && meta.directivo) s = 9;
+      // Quien no tiene área disciplinar (directivos, orientador, apoyo) no
+      // compite por ella: baja al final. meta.directivo NO alcanza — orientador
+      // y apoyo tampoco tienen área y no están marcados como directivos.
+      if (c.v === 'area' && !meta.area) s = 9;
       // Un directivo sí necesita normativa institucional de entrada.
       if (c.v === 'normativa' && meta.directivo) s = s - 0.3;
       return { fase: c.fase, label: c.label, key: c.v, score: s };
@@ -315,7 +317,11 @@
         key: 'flojo', multi: true,
         q: '¿Dónde te sientes más flojo?',
         hint: 'Puedes marcar varias. Si ya hiciste quizzes o el simulacro, tus resultados reales también cuentan.',
-        opts: COMPETENCIAS.map(function (c) { return { v: c.v, label: c.label }; })
+        // Sin área disciplinar no se ofrece esa casilla: marcarla no cambiaría
+        // nada (ordenarFases ya la ignora) y solo genera la pregunta "¿por qué
+        // me preguntan por mi área si no tengo?".
+        opts: COMPETENCIAS.filter(function (c) { return c.v !== 'area' || cargoMeta(draft.cargo).area; })
+          .map(function (c) { return { v: c.v, label: c.label }; })
       }
     );
     return lista;
