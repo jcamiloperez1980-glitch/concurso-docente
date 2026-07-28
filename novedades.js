@@ -4,9 +4,17 @@
 // Actualizar manualmente o con /actualiza-cursos cuando haya novedades.
 // ============================================================
 window.NOVEDADES = {
-  actualizado: "2026-07-24",
+  actualizado: "2026-07-28",
   color: "#d97706",
   items: [
+    {
+      fecha: "2026-07-27",
+      tag: "Pruebas",
+      titulo: "Proyecto de decreto en consulta pública: bajarían los puntajes mínimos a 50/100 (docentes) y 60/100 (directivos)",
+      resumen: "El MEN publicó en el sistema oficial de consulta normativa (SUCOP) un proyecto de decreto que modifica los artículos 2.4.1.1.11 y 2.4.1.1.13 del Decreto 1075 de 2015. Propone bajar el puntaje mínimo aprobatorio de la prueba eliminatoria de aptitudes y competencias básicas de 60 a 50 sobre 100 para docentes, y de 70 a 60 sobre 100 para directivos docentes; suma un componente sobre contextos rurales, territoriales y diferenciales; permite casos prácticos ligados al cargo específico; y elimina la exigencia obligatoria del examen Saber Pro en la valoración de antecedentes. La propuesta surge de acuerdos con FECODE y otros sindicatos en la Mesa Sectorial de Educación 2025.",
+      accion: "Aún NO es ley: es un proyecto en consulta pública hasta el 11 de agosto de 2026 y puede cambiar antes de firmarse — varios docentes ya comentaron en SUCOP en contra de bajar el puntaje. Puedes leer el texto completo y dejar tu comentario si quieres opinar. Este curso sigue usando el umbral vigente hoy (60/100 docentes, 70/100 directivos) hasta que el decreto quede firmado — te avisaremos aquí si eso ocurre.",
+      url: "https://www.sucop.gov.co/entidades/mineducacion/Normativa?IDNorma=31990"
+    },
     {
       fecha: "2026-07-22",
       tag: "Oficial",
@@ -14,14 +22,6 @@ window.NOVEDADES = {
       resumen: "El Gobierno confirmó que el concurso docente abierto ofertará 26.741 plazas en instituciones educativas oficiales de todo el país. La viceministra Maritza Molina declaró: \"Hoy podemos decirle al país que este proceso de selección es una realidad\". El objetivo es reducir la provisionalidad en colegios públicos y fortalecer la planta docente mediante meritocracia.",
       accion: "Si aún no tienes cuenta en SIMO (cnsc.gov.co), créala ya. Cuando se publique la OPEC en septiembre, podrás filtrar vacantes por municipio, cargo y área. Prepara tus soportes de títulos y experiencia — solo lo certificado puntúa.",
       url: "https://www.nacionpaisa.com/gobierno-anuncia-concurso-docente-con-26-741-vacantes-para-instituciones-educativas-oficiales/"
-    },
-    {
-      fecha: "2026-07-22",
-      tag: "Normativo",
-      titulo: "MEN ajusta normas en paralelo: cambios al manual de competencias y al Decreto 1075",
-      resumen: "El Ministerio de Educación está actualizando la Resolución 003842 de 2022 (Manual de Funciones, Requisitos y Competencias) y el Decreto 1075 de 2015 (procedimiento de selección). Estos ajustes definirán los títulos profesionales aceptados, la experiencia mínima exigida, la tabla de valoración de antecedentes y el protocolo de entrevista. La CNSC confirmó que los cambios se realizan en paralelo sin retrasar la convocatoria.",
-      accion: "Pendiente de confirmación: la tabla de valoración de antecedentes definirá cuánto puntúan posgrados y experiencia. Si estás cursando una especialización o maestría, prioriza obtener el título antes de la inscripción (nov-dic 2026).",
-      url: "https://grupogeard.com/co/blog/concursos-docentes/docente-abierto/actualizacion-concurso-docente-abierto-2026/"
     },
     {
       fecha: "2026-07-19",
@@ -54,14 +54,6 @@ window.NOVEDADES = {
       resumen: "En comunicado conjunto, el MEN y la CNSC anunciaron que el concurso abierto incluirá pruebas con enfoque territorial contextualizado a la labor docente. Se modificarán el manual de competencias laborales y el decreto de estructura del proceso. \"Hoy le decimos al país que el concurso va\", afirmó la viceministra Molina.",
       accion: "Las preguntas incluirán contextos del territorio donde aspiras a la plaza. Si vas por plaza rural, refuerza los módulos 1 y 5 del curso (casos con enfoque comunitario y modelos flexibles).",
       url: "https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/428350:El-Ministerio-de-Educacion-y-la-Comision-Nacional-del-Servicio-Civil-anuncian-avances-claves-en-el-concurso-docente-y-la-proteccion-de-maestros"
-    },
-    {
-      fecha: "2026-03-01",
-      tag: "Institucional",
-      titulo: "CNSC ratifica el concurso: no hay marcha atrás legal",
-      resumen: "La CNSC rechazó una solicitud del MEN de aplazar la convocatoria por carecer de sustento legal. Según el Decreto 1278 de 2002 y el artículo 130 de la Constitución, una vez vencidas las listas de elegibles existe la obligación de convocar un nuevo proceso. Se confirmaron 13.369 vacantes iniciales como piso mínimo.",
-      accion: "El concurso está blindado legalmente. No esperes a que abran inscripciones para empezar a prepararte — los módulos 1 a 6 de este curso cubren todos los componentes que evalúan.",
-      url: "https://mascolombia.com/confirmado-si-habra-concurso-docente/"
     }
   ]
 };
