@@ -246,7 +246,15 @@
     '.dg-wait-note{font-size:12px;color:var(--dim);line-height:1.5;margin-top:9px}' +
     '.dg-nudge{margin:0 0 18px;padding:12px 16px;border-radius:10px;font-size:13px;line-height:1.6;' +
     'background:var(--card-2);border:1px solid var(--border);color:var(--muted)}' +
-    '.dg-nudge strong{color:var(--text)}';
+    '.dg-nudge strong{color:var(--text)}' +
+    // Botón de la barra: se resalta con el color de marca en vez del gris
+    // apagado de las utilidades (tema, progreso) — es la puerta de entrada al
+    // diagnóstico y al embudo de pago, no una utilidad más.
+    '#diagBtn{flex-shrink:0;padding:6px 16px;border-radius:100px;border:none;color:#fff;' +
+    'font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;' +
+    'background:linear-gradient(135deg,var(--claude),var(--claude-2));' +
+    'box-shadow:0 4px 14px var(--claude-glow);transition:.2s}' +
+    '#diagBtn:hover{filter:brightness(1.08);transform:translateY(-1px)}';
   var st = document.createElement('style');
   st.id = 'dgCss';
   st.textContent = css;
@@ -571,8 +579,6 @@
     btn.id = 'diagBtn';
     btn.textContent = '🧭 Mi ruta';
     btn.onclick = function () { window.openDiagnostico(false); };
-    btn.style.cssText = 'flex-shrink:0;padding:5px 12px;border-radius:100px;background:var(--ui-2);' +
-      'border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit';
     var ref = document.getElementById('dashboardBtn') || document.getElementById('themeBtn');
     if (ref) bar.insertBefore(btn, ref); else bar.appendChild(btn);
   }
