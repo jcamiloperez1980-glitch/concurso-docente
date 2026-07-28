@@ -396,6 +396,23 @@
     return 'sin preferencia de zona';
   }
 
+  // Dos hechos independientes que no comparten condición: el umbral 70/100 es
+  // solo de directivos (rector, coordinador, director rural); "el área queda
+  // al final" aplica a cualquiera sin área disciplinar (también orientador y
+  // apoyo, que no son directivos).
+  function notaCargo(meta) {
+    var notas = [];
+    if (meta.directivo) {
+      notas.push('Como aspirante a directivo, tu puntaje mínimo hoy es <strong>70/100</strong> ' +
+        '(hay un proyecto de decreto que propone bajarlo a 60 — revisa Novedades).');
+    }
+    if (!meta.area) {
+      notas.push('Tu módulo de área disciplinar queda al final: no compites por ella.');
+    }
+    if (!notas.length) return '';
+    return '<p style="font-size:13px;color:var(--muted);line-height:1.6">' + notas.join(' ') + '</p>';
+  }
+
   // Copy de la lista de espera. Tres variantes reales, no una plantilla con el
   // nombre sustituido: a un directivo no le sirve "todo el mundo estudia
   // normativa" — la normativa es justamente lo suyo.
@@ -501,6 +518,13 @@
     var prioridad = ordenarFases(perfil);
     var razones = {};
     prioridad.forEach(function (f, i) {
+      // 'area' con !meta.area siempre cae al final, pero no es que "le vaya
+      // bien" ahí — el módulo no aplica a su cargo. Merece su propio texto,
+      // no el genérico de "último por buen desempeño".
+      if (f.key === 'area' && !meta.area) {
+        razones[f.fase] = 'No aplica a tu cargo: queda al final por si quieres explorarlo.';
+        return;
+      }
       razones[f.fase] = i === 0
         ? 'Empiezas aquí: es tu punto más débil según lo que marcaste y tus resultados.'
         : (i === prioridad.length - 1 ? 'Lo dejas para el final: aquí ya vas bien.' : '');
@@ -534,9 +558,7 @@
         'y la fecha de la prueba escrita todavía no es oficial, así que vas con margen.' +
         (sig ? '<br><a class="dg-go" href="#" id="dgGo">Empezar por ' + esc(sig.id) + ' — ' + esc(sig.title) + ' →</a>' : '') +
       '</div>' +
-      (meta.directivo
-        ? '<p style="font-size:13px;color:var(--muted);line-height:1.6">Como aspirante a directivo, tu puntaje mínimo hoy es <strong>70/100</strong> (hay un proyecto de decreto que propone bajarlo a 60 — revisa Novedades). Tu módulo de área disciplinar queda al final: no compites por ella.</p>'
-        : '') +
+      notaCargo(meta) +
       '<div class="dg-wait">' +
         '<div class="dg-wait-kicker">🎯 Lo que sigue</div>' +
         '<div class="dg-wait-title">' + esc(wc.titulo) + '</div>' +
