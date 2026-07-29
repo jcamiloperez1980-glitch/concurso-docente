@@ -599,7 +599,10 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 /* Drawer content styling */
 
-
+/* Intro de audio: alto explicito para que Chrome no dibuje los controles colapsados */
+.au-intro{margin:0 0 18px}
+.au-intro .au-cap{font-size:12px;font-weight:700;opacity:.7;margin-bottom:6px}
+.au-intro audio{display:block;width:100%;height:54px}
 
 .drawer-body h3{font-size:18px;font-weight:800;color:var(--text);margin:28px 0 12px;letter-spacing:-.01em}
 

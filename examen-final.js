@@ -152,7 +152,13 @@ openDrawer = function(id){
   _openDrawer(id);
   if(id==='P6'){
     const body = document.getElementById('drawerBody');
-    if(body) body.innerHTML = renderFinalExamBody();
+    if(body){
+      // Reemplazar el cuerpo borraba la intro de audio que app.js ya habia puesto.
+      // La guardamos y la devolvemos arriba para que P6 se comporte como el resto.
+      const intro = body.querySelector('.au-intro');
+      body.innerHTML = renderFinalExamBody();
+      if(intro) body.insertBefore(intro, body.firstChild);
+    }
   }
 };
 const _closeDrawer = closeDrawer;

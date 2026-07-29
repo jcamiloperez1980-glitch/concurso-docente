@@ -587,7 +587,7 @@ function openDrawer(lessonId){
   } else {
     body=`<h3>${lesson.title}</h3><p>${LANG.lessonCovers}</p><ul>${lesson.bullets.map(b=>`<li>${b}</li>`).join('')}</ul><p style="margin-top:20px;color:var(--dim);font-style:italic">${LANG.lessonFrom} ${lesson.source}.</p>`;
   }
-  if(window.LESSON_CONTENT&&window.LESSON_CONTENT[lessonId]&&!(window.QUIZZES&&window.QUIZZES[lessonId])&&window.AUDIO_LESSONS&&window.AUDIO_LESSONS.indexOf(lessonId)>=0){body='<div style="margin:0 0 18px"><div style="font-size:12px;font-weight:700;opacity:.7;margin-bottom:6px">🎧 Intro del instructor</div><audio controls preload="none" style="width:100%" src="audio/'+lessonId+'.mp3"></audio></div>'+body;}
+  if(window.LESSON_CONTENT&&window.LESSON_CONTENT[lessonId]&&!(window.QUIZZES&&window.QUIZZES[lessonId])&&window.AUDIO_LESSONS&&window.AUDIO_LESSONS.indexOf(lessonId)>=0){body='<div class="au-intro"><div class="au-cap">🎧 Intro del instructor</div><audio controls preload="metadata" src="audio/'+lessonId+'.mp3"></audio></div>'+body;}
   document.getElementById('drawerBody').innerHTML=body;
   document.getElementById('drawerBody').scrollTop=0;
   const completed=getCompleted(); const isComplete=completed.includes(lessonId); const idx=ALL_IDS.indexOf(lessonId);
@@ -595,6 +595,13 @@ function openDrawer(lessonId){
   document.getElementById('drawerOverlay').classList.add('open');
   document.getElementById('drawer').classList.add('open');
   document.body.style.overflow='hidden';
+  // El audio se inserta mientras el drawer sigue en translateX(100%), fuera del viewport:
+  // Chrome calcula ahí el panel de controles y lo deja colapsado hasta que algo lo toca.
+  // Al terminar la apertura lo re-insertamos para que se dibuje completo.
+  const au=document.querySelector('#drawerBody audio');
+  if(au){const relayout=()=>{if(au.readyState===0)au.load();au.style.display='none';void au.offsetHeight;au.style.display='block';};
+    document.getElementById('drawer').addEventListener('transitionend',relayout,{once:true});
+    setTimeout(relayout,450);}
 }
 function closeDrawer(){var d=document.getElementById('drawer');var o=document.getElementById('drawerOverlay');d.querySelectorAll('video,audio').forEach(function(m){m.pause();});if(document.fullscreenElement)document.exitFullscreen().catch(function(){});if(document.webkitFullscreenElement&&document.webkitExitFullscreen)document.webkitExitFullscreen();o.classList.remove('open');o.style.pointerEvents='';d.classList.remove('open');d.style.transform='';document.body.style.overflow='';document.body.style.overflowX='hidden';document.documentElement.style.overflowX='hidden';currentDrawerLesson=null;window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;setTimeout(function(){window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;},150);}
 function navLesson(dir){const idx=ALL_IDS.indexOf(currentDrawerLesson);const next=idx+dir;if(next>=0&&next<ALL_IDS.length)openDrawer(ALL_IDS[next]);}
