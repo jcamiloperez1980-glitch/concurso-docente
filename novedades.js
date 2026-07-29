@@ -4,9 +4,17 @@
 // Actualizar manualmente o con /actualiza-cursos cuando haya novedades.
 // ============================================================
 window.NOVEDADES = {
-  actualizado: "2026-07-28",
+  actualizado: "2026-07-29",
   color: "#d97706",
   items: [
+    {
+      fecha: "2026-07-29",
+      tag: "Inscripción",
+      titulo: "Costo de inscripción confirmado: $87.550 para docentes y directivos",
+      resumen: "La CNSC fijó mediante la Resolución 562 de 2026 los derechos de participación para todos los procesos de selección del año, incluido el concurso docente abierto. El valor para cargos de nivel profesional (docentes y directivos docentes) es de $87.550; para nivel técnico y asistencial, $58.400. Se calculan sobre el salario mínimo 2026 ($1.750.905/mes) según la Ley 1033 de 2006: 1,5 días de salario mínimo para profesional y 1 día para técnico/asistencial.",
+      accion: "El pago se hará exclusivamente por los medios habilitados en la plataforma SIMO cuando se abran las inscripciones (proyectadas nov-dic 2026). No se aceptan consignaciones directas ni pagos en efectivo el día de la prueba. Ve reuniendo el dinero y asegúrate de tener tu cuenta en SIMO activa.",
+      url: "https://www.cnsc.gov.co/estos-son-los-valores-pagar-por-derechos-de-participacion-en-los-procesos-de-seleccion-que-0"
+    },
     {
       fecha: "2026-07-27",
       tag: "Pruebas",
