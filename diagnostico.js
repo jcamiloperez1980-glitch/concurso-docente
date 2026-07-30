@@ -477,7 +477,7 @@
     return p.area;
   }
 
-  function renderResultado() {
+  function renderResultado(isReview) {
     var perfil = {
       cargo: draft.cargo,
       area: draft.area || null,
@@ -494,24 +494,23 @@
     var area = areaFinal(perfil);
     var wc = waitCopy(meta, area);
 
-    // Señal de demanda a GA4 — esto es lo que decide qué áreas se construyen.
-    track('diagnostic_complete', {
-      cargo: perfil.cargo,
-      // 'otra_sin_especificar' se distingue de 'n/a' (cargos sin área) a propósito:
-      // si aparece mucho, el selector de áreas se está quedando corto.
-      area: area || (meta.area ? 'otra_sin_especificar' : 'n/a'),
-      zona: perfil.zona,
-      tiempo: perfil.tiempo,
-      debilidades: perfil.flojo.join(',') || 'ninguna'
-    });
-    if (WAITLIST_ENDPOINT) {
-      try {
-        fetch(WAITLIST_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(perfil)
-        }).catch(function () {});
-      } catch (e) {}
+    if (!isReview) {
+      track('diagnostic_complete', {
+        cargo: perfil.cargo,
+        area: area || (meta.area ? 'otra_sin_especificar' : 'n/a'),
+        zona: perfil.zona,
+        tiempo: perfil.tiempo,
+        debilidades: perfil.flojo.join(',') || 'ninguna'
+      });
+      if (WAITLIST_ENDPOINT) {
+        try {
+          fetch(WAITLIST_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(perfil)
+          }).catch(function () {});
+        } catch (e) {}
+      }
     }
 
     var ruta = construirRuta(perfil);
@@ -600,7 +599,7 @@
         cargo: p.cargo, area: p.area, area_otra: p.area_otra,
         zona: p.zona, tiempo: p.tiempo, flojo: p.flojo || []
       };
-      renderResultado();
+      renderResultado(true);
     } else {
       draft = {}; paso = 0;
       track('diagnostic_start', {});
