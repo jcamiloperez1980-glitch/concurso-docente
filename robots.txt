@@ -1,3 +1,5 @@
+Sitemap: https://concurso-docente-ral.netlify.app/sitemap.xml
+
 User-agent: *
 Disallow: /content.js
 Disallow: /app.js
