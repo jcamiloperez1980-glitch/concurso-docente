@@ -28,6 +28,12 @@
   // Cargos según la lección A1. Áreas basadas en las áreas obligatorias y
   // fundamentales de la Ley 115 de 1994 (art. 23). PROVISIONAL: la lista
   // definitiva sale con la OPEC en septiembre de 2026.
+  var PROCESOS = [
+    { v: 'ingreso', label: 'Ingreso (soy aspirante nuevo)' },
+    { v: 'ascenso', label: 'Ascenso o reubicación (ya estoy en el Decreto 1278)' },
+    { v: 'traslado', label: 'Traslado (ya tengo plaza y quiero moverme)' }
+  ];
+
   var CARGOS = [
     { v: 'aula', label: 'Docente de aula', area: true },
     { v: 'orientador', label: 'Docente orientador', area: false },
@@ -284,6 +290,12 @@
   function pasos() {
     var lista = [
       {
+        key: 'proceso', multi: false,
+        q: '¿Qué proceso vas a presentar?',
+        hint: 'Ingreso y ascenso comparten pedagogía y normativa, pero difieren en estructura y valoración de antecedentes.',
+        opts: PROCESOS.map(function (p) { return { v: p.v, label: p.label }; })
+      },
+      {
         key: 'cargo', multi: false,
         q: '¿A qué cargo te vas a presentar?',
         hint: 'Define toda tu ruta: un rector y un docente de aula no presentan la misma prueba.',
@@ -400,6 +412,18 @@
   // solo de directivos (rector, coordinador, director rural); "el área queda
   // al final" aplica a cualquiera sin área disciplinar (también orientador y
   // apoyo, que no son directivos).
+  // El traslado no es un concurso de mérito: es un trámite administrativo
+  // (prioridad, solicitud en SIMO, aprobación de la ETC). El curso no tiene
+  // todavía un recurso propio para eso — se dice honestamente en vez de
+  // vender el simulacro como si aplicara.
+  function notaProceso(proceso) {
+    if (proceso !== 'traslado') return '';
+    return '<p style="font-size:13px;color:var(--muted);line-height:1.6">' +
+      'El traslado no se decide por examen, sino por un trámite administrativo (prioridad, solicitud en SIMO, ' +
+      'aprobación de la entidad territorial). Las lecciones de normativa te sirven de todos modos, pero los ' +
+      'simulacros de este curso están pensados para ingreso y ascenso, que sí son de mérito.</p>';
+  }
+
   function notaCargo(meta) {
     var notas = [];
     if (meta.directivo) {
@@ -479,6 +503,7 @@
 
   function renderResultado(isReview) {
     var perfil = {
+      proceso: draft.proceso,
       cargo: draft.cargo,
       area: draft.area || null,
       area_otra: draft.area_otra || null,
@@ -496,6 +521,7 @@
 
     if (!isReview) {
       track('diagnostic_complete', {
+        proceso: perfil.proceso,
         cargo: perfil.cargo,
         area: area || (meta.area ? 'otra_sin_especificar' : 'n/a'),
         zona: perfil.zona,
@@ -557,6 +583,7 @@
         'y la fecha de la prueba escrita todavía no es oficial, así que vas con margen.' +
         (sig ? '<br><a class="dg-go" href="#" id="dgGo">Empezar por ' + esc(sig.id) + ' — ' + esc(sig.title) + ' →</a>' : '') +
       '</div>' +
+      notaProceso(perfil.proceso) +
       notaCargo(meta) +
       '<div class="dg-wait">' +
         '<div class="dg-wait-kicker">🎯 Lo que sigue</div>' +
