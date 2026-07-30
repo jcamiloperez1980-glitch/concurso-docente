@@ -595,6 +595,7 @@ function openDrawer(lessonId){
   document.getElementById('drawerOverlay').classList.add('open');
   document.getElementById('drawer').classList.add('open');
   document.body.style.overflow='hidden';
+  var nv=document.getElementById('nvBtn');if(nv)nv.style.display='none';
   // El audio se inserta mientras el drawer sigue en translateX(100%), fuera del viewport:
   // Chrome calcula ahí el panel de controles y lo deja colapsado hasta que algo lo toca.
   // Al terminar la apertura lo re-insertamos para que se dibuje completo.
@@ -603,7 +604,7 @@ function openDrawer(lessonId){
     document.getElementById('drawer').addEventListener('transitionend',relayout,{once:true});
     setTimeout(relayout,450);}
 }
-function closeDrawer(){var d=document.getElementById('drawer');var o=document.getElementById('drawerOverlay');d.querySelectorAll('video,audio').forEach(function(m){m.pause();});if(document.fullscreenElement)document.exitFullscreen().catch(function(){});if(document.webkitFullscreenElement&&document.webkitExitFullscreen)document.webkitExitFullscreen();o.classList.remove('open');o.style.pointerEvents='';d.classList.remove('open');d.style.transform='';document.body.style.overflow='';document.body.style.overflowX='hidden';document.documentElement.style.overflowX='hidden';currentDrawerLesson=null;window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;setTimeout(function(){window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;},150);}
+function closeDrawer(){var d=document.getElementById('drawer');var o=document.getElementById('drawerOverlay');d.querySelectorAll('video,audio').forEach(function(m){m.pause();});if(document.fullscreenElement)document.exitFullscreen().catch(function(){});if(document.webkitFullscreenElement&&document.webkitExitFullscreen)document.webkitExitFullscreen();o.classList.remove('open');o.style.pointerEvents='';d.classList.remove('open');d.style.transform='';var nv=document.getElementById('nvBtn');if(nv)nv.style.display='';document.body.style.overflow='';document.body.style.overflowX='hidden';document.documentElement.style.overflowX='hidden';currentDrawerLesson=null;window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;setTimeout(function(){window.scrollTo(0,window.scrollY);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;},150);}
 function navLesson(dir){const idx=ALL_IDS.indexOf(currentDrawerLesson);const next=idx+dir;if(next>=0&&next<ALL_IDS.length)openDrawer(ALL_IDS[next]);}
 function renderToc(){const bar=document.getElementById('tocBar');PHASES.forEach(p=>{const a=document.createElement('a');a.className='toc-chip';a.href='#phase-'+p.id;a.style.setProperty('--accent',p.color);a.dataset.phase=p.id;a.innerHTML=`<span class="chip-num">${p.num}</span><span class="chip-check">✓</span>${p.short||p.title.split(' ').slice(0,2).join(' ')}`;bar.appendChild(a);});}
 function renderMarquee(){document.getElementById('marquee').innerHTML=[...TOOLS,...TOOLS].map(t=>`<span class="brand-chip"><span class="em">${t.icon}</span>${t.name}</span>`).join('');}
