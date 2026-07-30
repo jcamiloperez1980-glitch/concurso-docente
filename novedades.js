@@ -4,7 +4,7 @@
 // Actualizar manualmente o con /actualiza-cursos cuando haya novedades.
 // ============================================================
 window.NOVEDADES = {
-  actualizado: "2026-07-29",
+  actualizado: "2026-07-30",
   color: "#d97706",
   items: [
     {
@@ -48,20 +48,12 @@ window.NOVEDADES = {
       url: "https://grupogeard.com/co/blog/sin-categoria/novedades-concursos-merito-2026-avanzan-convocatorias-esperadas-cnsc/"
     },
     {
-      fecha: "2026-05-12",
-      tag: "Ascenso",
-      titulo: "Resultados definitivos del concurso de ascenso publicados",
-      resumen: "El MEN publicó los resultados definitivos del concurso de ascenso y reubicación salarial (Decreto 1278). La prueba pedagógica escrita se aplicó el 22 de febrero de 2026 con más de 40.000 participantes. Se requería un mínimo de 80% para ascender. El proceso anterior benefició a más de 80.000 educadores con mejoras salariales.",
-      accion: "Si ya estás en el Decreto 1278, consulta tus resultados en la página del MEN. Si eres aspirante nuevo, tu concurso es el abierto (de ingreso): inscripciones proyectadas nov-dic 2026.",
-      url: "https://www.eltiempo.com/vida/educacion/prueba-escrita-del-concurso-docentes-2026-esta-es-la-fecha-confirmada-y-los-pasos-para-verificar-citacion-de-ministerio-de-educacion-3516954"
-    },
-    {
-      fecha: "2026-04-01",
+      fecha: "2026-06-19",
       tag: "Oficial",
-      titulo: "Confirmado: las pruebas tendrán enfoque territorial",
-      resumen: "En comunicado conjunto, el MEN y la CNSC anunciaron que el concurso abierto incluirá pruebas con enfoque territorial contextualizado a la labor docente. Se modificarán el manual de competencias laborales y el decreto de estructura del proceso. \"Hoy le decimos al país que el concurso va\", afirmó la viceministra Molina.",
-      accion: "Las preguntas incluirán contextos del territorio donde aspiras a la plaza. Si vas por plaza rural, refuerza los módulos 1 y 5 del curso (casos con enfoque comunitario y modelos flexibles).",
-      url: "https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/428350:El-Ministerio-de-Educacion-y-la-Comision-Nacional-del-Servicio-Civil-anuncian-avances-claves-en-el-concurso-docente-y-la-proteccion-de-maestros"
+      titulo: "El arraigo territorial tendrá \"relevancia especial\" en la valoración de antecedentes",
+      resumen: "El MEN confirmó que el arraigo territorial —conocimiento del contexto, permanencia y compromiso con las comunidades— será un componente clave en la tabla de valoración de antecedentes que construye la CNSC, junto a formación, experiencia relacionada y trayectoria. El insumo técnico se construyó con mesas de trabajo entre el MEN, FECODE y docentes provisionales, reportando 26.300 vacantes definitivas.",
+      accion: "Si tienes experiencia, formación o vínculo con la región o municipio donde aspiras a la plaza, reúne los soportes que lo certifiquen (constancias laborales, resoluciones de nombramiento, certificados de residencia o vinculación comunitaria) — es probable que puntúen en la valoración de antecedentes cuando se publique la tabla definitiva.",
+      url: "https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/429273:Gobierno-del-Cambio-abrira-mas-de-26-mil-plazas-docentes-para-fortalecer-la-educacion-publica"
     }
   ]
 };
