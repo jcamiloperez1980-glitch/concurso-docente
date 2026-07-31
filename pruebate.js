@@ -138,7 +138,7 @@
 
     html +=
       '<button class="pb-cta" id="pbCta">Seguir practicando →</button>' +
-      '<a class="pb-alt" href="#fase-1" id="pbAlt">o ver el curso completo, gratis y sin registro</a>' +
+      '<a class="pb-alt" href="#phase-' + PHASES[0].id + '" id="pbAlt">o ver el curso completo, gratis y sin registro</a>' +
       '</div>';
 
     document.getElementById('pbFb').innerHTML = html;
