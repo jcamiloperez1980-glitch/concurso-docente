@@ -39,14 +39,19 @@
     ]
   };
 
+  var ANSWERED_KEY = 'ral_pruebate_answered';
+
   function track(name, params) {
     if (typeof gtag === 'function') gtag('event', name, params || {});
   }
 
   // Quien ya arrancó el curso no necesita la muestra: sería ruido sobre
-  // contenido que ya decidió consumir.
+  // contenido que ya decidió consumir. Quien ya respondió la pregunta en una
+  // visita anterior tampoco: repetirla con la respuesta ya revelada quema
+  // el efecto sorpresa sin aportar nada nuevo.
   function yaEmpezo() {
     try {
+      if (localStorage.getItem(ANSWERED_KEY)) return true;
       if (typeof getCompleted === 'function' && getCompleted().length > 0) return true;
       return !!localStorage.getItem('concursoDocente_perfil');
     } catch (e) { return false; }
@@ -142,6 +147,7 @@
       acerto: acerto,
       tipo_distractor: elegida.tipo || 'correcta'
     });
+    try { localStorage.setItem(ANSWERED_KEY, '1'); } catch (e) {}
 
     document.getElementById('pbCta').onclick = function () {
       track('pruebate_cta', { destino: 'P1', acerto: acerto });
