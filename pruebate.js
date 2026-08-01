@@ -86,7 +86,9 @@
     '.pb-cta:hover{filter:brightness(1.07)}' +
     '.pb-alt{display:block;margin-top:10px;font-size:12.5px;color:var(--dim);text-decoration:none;font-weight:600}' +
     '.pb-alt:hover{color:var(--claude)}' +
-    '@media(max-width:600px){.pb-card{padding:18px;margin-top:22px;border-radius:14px}.pb-q{font-size:14.5px}}';
+    '@media(max-width:600px){.pb-card{padding:14px;margin-top:14px;border-radius:14px}' +
+    '.pb-q{font-size:13.5px;line-height:1.5;margin-bottom:12px}' +
+    '.pb-opt{padding:9px 11px;margin-bottom:6px;font-size:12.5px;line-height:1.4}}';
 
   var st = document.createElement('style');
   st.id = 'pbCss';

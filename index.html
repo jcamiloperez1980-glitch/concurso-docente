@@ -260,7 +260,14 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 .hero-author-links a svg{width:16px;height:16px;fill:currentColor}
 .hero-author-email{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);text-decoration:none;transition:color .2s}
 .hero-author-email:hover{color:var(--claude)}
-@media(max-width:600px){.hero-author{flex-direction:column;text-align:center;gap:14px;padding:18px}.hero-author-info{align-items:center;text-align:center}.hero-author-services{justify-content:center}}
+@media(max-width:600px){.hero-author{flex-direction:column;text-align:center;gap:14px;padding:18px}.hero-author-info{align-items:center;text-align:center}.hero-author-services{justify-content:center}
+/* Comprimir el hero para que las 4 opciones del quiz queden sobre el fold en 375x812 */
+.hero{padding:20px 0 24px}
+.hero-badge{display:none}
+.hero-title .top{font-size:13px}
+.hero-title .main{font-size:30px}
+.hero-title .sub{font-size:12.5px;line-height:1.45;margin-top:6px}
+.hero-meta{flex-wrap:wrap;justify-content:center;gap:8px;padding:10px 16px;margin-top:18px}}
 
 
 
