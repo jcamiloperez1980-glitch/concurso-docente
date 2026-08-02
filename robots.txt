@@ -1,12 +1,7 @@
 Sitemap: https://concurso-docente-ral.netlify.app/sitemap.xml
 
 User-agent: *
-Disallow: /content.js
-Disallow: /app.js
-Disallow: /flashcards-data.js
-Disallow: /escenario-data.js
-Disallow: /videos-data.js
-Disallow: /transcripts.js
+Allow: /
 
 User-agent: GPTBot
 Disallow: /
