@@ -4,9 +4,17 @@
 // Actualizar manualmente o con /actualiza-cursos cuando haya novedades.
 // ============================================================
 window.NOVEDADES = {
-  actualizado: "2026-07-30",
+  actualizado: "2026-08-04",
   color: "#d97706",
   items: [
+    {
+      fecha: "2026-08-04",
+      tag: "Pruebas",
+      titulo: "Última semana para opinar sobre el decreto de puntajes: la consulta cierra el 11 de agosto",
+      resumen: "El proyecto de decreto que bajaría el puntaje mínimo aprobatorio a 50/100 (docentes) y 60/100 (directivos) sigue EN CONSULTA PÚBLICA y cierra el martes 11 de agosto de 2026. Está radicado como PN-2026-31990, se publicó el 27 de julio y ya acumula 143 comentarios ciudadanos, con aportes que seguían llegando el 4 de agosto. Varios docentes piden mantener el umbral en 60/100 argumentando que un mínimo más bajo no garantiza mérito; otros respaldan la propuesta porque da más peso a formación y experiencia. Aún no está firmado: mientras tanto rigen 60/100 para docentes y 70/100 para directivos.",
+      accion: "Tienes hasta el 11 de agosto para dejar tu observación: entra al enlace, descarga el \"Documento de consulta\" y la \"Memoria justificativa\" (ambos en PDF) e inicia sesión en SUCOP para comentar. Si el decreto se firma, cambia el umbral con el que debes estudiar — te avisaremos aquí apenas cambie el estado del proyecto.",
+      url: "https://www.sucop.gov.co/entidades/mineducacion/Normativa?IDNorma=31990"
+    },
     {
       fecha: "2026-07-29",
       tag: "Inscripción",
