@@ -144,6 +144,15 @@
       '</div>';
 
     document.getElementById('pbFb').innerHTML = html;
+
+    // Quien acaba de responder ya se comprometió con algo y tiene el tema fresco:
+    // es el mejor momento del sitio para pedirle el correo, y alcanza incluso a
+    // quien rebota sin abrir una sola lección.
+    if (typeof window.bloqueCaptura === 'function') {
+      var cap = window.bloqueCaptura('pruebate', {});
+      if (cap) document.querySelector('#pbFb .pb-fb').appendChild(cap);
+    }
+
     track('pruebate_answer', {
       opcion: LETRAS[i],
       acerto: acerto,

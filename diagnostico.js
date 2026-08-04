@@ -20,9 +20,8 @@
   var EXAM_KEY = 'concursoDocente_examHistory';
   var NUDGE_KEY = 'concursoDocente_ultimaVisita';
 
-  // Cuando exista backend (Supabase/Formspree), poner aquí la URL y el módulo
-  // hará POST del perfil además de la señal a GA4. null = solo GA4 + WhatsApp.
-  var WAITLIST_ENDPOINT = null;
+  // El perfil ya no se queda solo en localStorage: captura.js lo manda a Netlify
+  // Forms (ver window.enviarCaptura más abajo), además de la señal a GA4.
 
   // ── Catálogos ───────────────────────────────────────────────────────────────
   // Cargos según la lección A1. Áreas basadas en las áreas obligatorias y
@@ -528,12 +527,20 @@
         tiempo: perfil.tiempo,
         debilidades: perfil.flojo.join(',') || 'ninguna'
       });
-      if (WAITLIST_ENDPOINT) {
+      // El perfil se manda aunque todavía no haya correo: aun anónimo dice qué
+      // bancos pide la demanda, que es lo que decide cuáles 3 se construyen.
+      // Si después deja el correo, el bloque de captura manda otra fila con el
+      // mismo cargo y área, y las dos se cruzan.
+      if (typeof window.enviarCaptura === 'function') {
         try {
-          fetch(WAITLIST_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(perfil)
+          window.enviarCaptura({
+            correo: '',
+            cargo: meta.label,
+            area: area || '',
+            municipio: '',
+            contexto: 'diagnostico_perfil',
+            origen: location.search || '(directo)',
+            perfil: JSON.stringify(perfil)
           }).catch(function () {});
         } catch (e) {}
       }
@@ -614,6 +621,17 @@
     if (wait) wait.onclick = function () {
       track('waitlist_click', { cargo: perfil.cargo, area: area || 'n/a' });
     };
+
+    // WhatsApp se queda: en Colombia convierte mejor y es la señal de intención
+    // más fuerte del sitio. Pero de los 2 que hicieron clic en julio no sabemos
+    // cuántos llegaron a mandar el mensaje. El correo es la red debajo.
+    if (typeof window.bloqueCaptura === 'function') {
+      var cont = wait && wait.parentNode;
+      if (cont && !cont.querySelector('.cap-in')) {
+        var cap = window.bloqueCaptura('diagnostico', { cargo: perfil.cargo });
+        if (cap) cont.appendChild(cap);
+      }
+    }
     var redo = document.getElementById('dgRedo');
     if (redo) redo.onclick = function () { draft = {}; paso = 0; renderPaso(); };
   }
