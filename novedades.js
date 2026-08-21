@@ -4,16 +4,38 @@
 // Actualizar manualmente o con /actualiza-cursos cuando haya novedades.
 // ============================================================
 window.NOVEDADES = {
-  actualizado: "2026-08-04",
+  actualizado: "2026-08-21",
   color: "#d97706",
   items: [
     {
-      fecha: "2026-08-04",
+      fecha: "2026-08-19",
+      tag: "Cronograma",
+      titulo: "Ya salió la OPEC preliminar: 28.000+ vacantes y tienes hasta el 25 de agosto para hacer observaciones",
+      resumen: "La CNSC publicó el 19 de agosto los proyectos de acuerdo de convocatoria de cada Entidad Territorial Certificada, el anexo técnico y la OPEC preliminar del proceso de selección docentes y directivos docentes 2026, con más de 28.000 vacantes. Las reglas del concurso están sobre la mesa antes de quedar en firme: la ciudadanía tiene siete días calendario —del 19 al 25 de agosto, incluidos sábado y domingo— para presentar observaciones a un artículo, numeral o dato puntual. Por primera vez el proceso incorpora la reserva de mínimo el 7 % de las vacantes para personas con discapacidad (Ley 2418 de 2024 y Sentencia C-117 de 2026). La OPEC de esta etapa es preliminar y puede variar hasta antes de abrir inscripciones; las pruebas se aplicarán en más de 50 ciudades, con citación mínimo 10 días antes.",
+      accion: "Entra hoy a simo.cnsc.gov.co → \"Proyectos Acuerdo\" y busca la OPEC preliminar de tu entidad territorial: ahí ves cuántas plazas hay de tu cargo y área en tu municipio. Luego, en cnsc.gov.co → Procesos de selección → Nuevos procesos de selección → docentes y directivos docentes 2026 → \"Ingrese acá para dejar sus comentarios\". Cierra el lunes 25 de agosto y no hay prórroga; después ya no se pueden observar las reglas.",
+      url: "https://www.cnsc.gov.co/la-cnsc-publica-los-proyectos-de-acuerdo-el-anexo-tecnico-y-la-opec-preliminar-del-proceso-de"
+    },
+    {
+      fecha: "2026-08-12",
       tag: "Pruebas",
-      titulo: "Última semana para opinar sobre el decreto de puntajes: la consulta cierra el 11 de agosto",
-      resumen: "El proyecto de decreto que bajaría el puntaje mínimo aprobatorio a 50/100 (docentes) y 60/100 (directivos) sigue EN CONSULTA PÚBLICA y cierra el martes 11 de agosto de 2026. Está radicado como PN-2026-31990, se publicó el 27 de julio y ya acumula 143 comentarios ciudadanos, con aportes que seguían llegando el 4 de agosto. Varios docentes piden mantener el umbral en 60/100 argumentando que un mínimo más bajo no garantiza mérito; otros respaldan la propuesta porque da más peso a formación y experiencia. Aún no está firmado: mientras tanto rigen 60/100 para docentes y 70/100 para directivos.",
-      accion: "Tienes hasta el 11 de agosto para dejar tu observación: entra al enlace, descarga el \"Documento de consulta\" y la \"Memoria justificativa\" (ambos en PDF) e inicia sesión en SUCOP para comentar. Si el decreto se firma, cambia el umbral con el que debes estudiar — te avisaremos aquí apenas cambie el estado del proyecto.",
+      titulo: "Cerró la consulta del decreto de puntajes: 179 comentarios y el MEN ya los está analizando",
+      resumen: "La consulta pública del proyecto PN-2026-31990 —el que bajaría el puntaje mínimo aprobatorio a 50/100 para docentes y 60/100 para directivos— cerró el martes 11 de agosto de 2026 con 179 comentarios ciudadanos, 36 más que la semana pasada. El proyecto pasó al estado \"En análisis de los comentarios\": el Ministerio de Educación debe ahora estudiar las observaciones y decidir si firma el decreto tal como se publicó, lo modifica o lo archiva. Los comentarios están divididos: varios docentes piden mantener 60/100 argumentando que un umbral más bajo llenaría las listas de elegibles muy por encima del número de plazas; otros respaldan la propuesta por dar más peso a formación, experiencia y arraigo territorial.",
+      accion: "Ya no se pueden dejar comentarios. Sigue estudiando con el umbral vigente hoy —60/100 docentes y 70/100 directivos— porque es el que rige hasta que se firme un decreto nuevo. No hay plazo legal fijo para que el MEN decida, así que puede tardar semanas: te avisaremos aquí apenas el proyecto quede expedido o archivado.",
       url: "https://www.sucop.gov.co/entidades/mineducacion/Normativa?IDNorma=31990"
+    },
+    {
+      fecha: "2026-08-08",
+      tag: "Curso",
+      titulo: "Nuevo: insignias en las preguntas + 52 preguntas nuevas, incluyendo el formato real del examen (4 niveles de desempeño)",
+      resumen: "Desde hoy las preguntas del curso llevan insignias que te dicen de dónde viene cada una. 🟢 \"Formato CNSC real\" (34 preguntas): replican el formato oficial del examen — un caso con cuatro actuaciones clasificadas en niveles Inferior, Mínimo, Satisfactorio y Avanzado, como en la Guía Orientadora del ICFES; ahora TODAS las lecciones con preguntas tienen al menos dos, incluidas las de áreas disciplinares, entrevista y día del examen. 🔵 \"Pregunta oficial\" (15 preguntas): construidas directamente sobre el único ejemplo publicado por el ICFES y sobre los artículos exactos de las normas que más caen (Decreto 1290 arts. 3, 5, 6 y 12; Decreto 1421; Ley 715 art. 10; Decreto 1860 art. 21; Ley 1098 art. 44; Ley 1732), con la fuente citada en cada respuesta. 🟡 \"Tema del examen pasado\" (66 preguntas): temas confirmados de la aplicación anterior. Además, la lección de razonamiento cuantitativo estrenó un banco ampliado de aptitud numérica con 8 problemas nuevos (edades, fracciones sucesivas, regla de tres compuesta, MCM, análisis de tablas) con técnica de descarte explicada.",
+      accion: "Empieza por las preguntas verdes \"Formato CNSC real\" de tu perfil: son el formato exacto que verás en el examen. Si distingues con seguridad una actuación de nivel Avanzado de una Satisfactorio, llevas medio examen ganado. Cierra con los dos casos integradores de calibración final en la lección F2."
+    },
+    {
+      fecha: "2026-08-05",
+      tag: "Curso",
+      titulo: "Banco de preguntas ampliado: 430+ preguntas con estándares ICFES y bloques de juicio situacional (testlets)",
+      resumen: "Hicimos una auditoría completa de todas las preguntas del curso contra los criterios oficiales de diseño de ítems del ICFES (Diseño Centrado en Evidencias), las normas de la CNSC y los lineamientos del MEN. Se reescribieron más de 50 preguntas que pedían definiciones de memoria para convertirlas en juicio situacional: ahora cada pregunta presenta un caso realista de aula o institución y te pide elegir la mejor actuación, igual que el examen real. Además, se agregaron 6 bloques de ítems de contexto compartido (testlets) en formato de Prueba de Juicio Situacional (PJS), donde un mismo caso genera 4 preguntas desde distintos ángulos. Los bloques cubren los 5 perfiles: preescolar, primaria rural, secundaria, orientador y directivo. Todas las retroalimentaciones citan la norma específica (ley, decreto y artículo) y explican por qué cada distractor es incorrecto usando la taxonomía oficial del ICFES.",
+      accion: "Repasa los simulacros P2, P3 y P4: al final de cada uno encontrarás los bloques de caso nuevos. Son el formato más cercano al examen real — practica leyendo el caso completo antes de responder cada pregunta."
     },
     {
       fecha: "2026-07-29",
@@ -36,32 +58,8 @@ window.NOVEDADES = {
       tag: "Oficial",
       titulo: "Cifra actualizada: 26.741 vacantes para docentes y directivos docentes",
       resumen: "El Gobierno confirmó que el concurso docente abierto ofertará 26.741 plazas en instituciones educativas oficiales de todo el país. La viceministra Maritza Molina declaró: \"Hoy podemos decirle al país que este proceso de selección es una realidad\". El objetivo es reducir la provisionalidad en colegios públicos y fortalecer la planta docente mediante meritocracia.",
-      accion: "Si aún no tienes cuenta en SIMO (cnsc.gov.co), créala ya. Cuando se publique la OPEC en septiembre, podrás filtrar vacantes por municipio, cargo y área. Prepara tus soportes de títulos y experiencia — solo lo certificado puntúa.",
+      accion: "La OPEC preliminar ya está publicada — consulta la novedad más reciente arriba para ver las vacantes de tu municipio. Si aún no tienes cuenta en SIMO (cnsc.gov.co), créala ya. Prepara tus soportes de títulos y experiencia — solo lo certificado puntúa.",
       url: "https://www.nacionpaisa.com/gobierno-anuncia-concurso-docente-con-26-741-vacantes-para-instituciones-educativas-oficiales/"
-    },
-    {
-      fecha: "2026-07-19",
-      tag: "Oficial",
-      titulo: "MEN y CNSC finalizan planeación: más de 26.300 vacantes confirmadas",
-      resumen: "El Ministerio de Educación y la CNSC cerraron la etapa de planeación del concurso docente abierto. La viceministra Maritza Molina y el comisionado Edwin Arturo Ruiz confirmaron que el proceso ofertará más de 26.300 vacantes para docentes y directivos docentes en todo el país, dentro de un paquete de 29.900 empleos públicos.",
-      accion: "Las inscripciones se proyectan para noviembre-diciembre de 2026. Mientras tanto, actualiza tu hoja de vida en SIMO (cnsc.gov.co) y reúne tus soportes de antecedentes — solo lo certificado puntúa.",
-      url: "https://www.elpais.com.co/economia/concurso-docente-2026-ministerio-de-educacion-y-cnsc-confirman-nuevo-paso-para-mas-de-26000-vacantes-1719.html"
-    },
-    {
-      fecha: "2026-07-19",
-      tag: "Cronograma",
-      titulo: "Ruta oficial: OPEC en septiembre, inscripciones a fin de año",
-      resumen: "La CNSC publicó la hoja de ruta del concurso abierto: en septiembre se publican los proyectos de Acuerdo, el Anexo Técnico y la OPEC preliminar para consulta ciudadana. En octubre se presentan ante la Sala Plena de Comisionados. Entre noviembre y diciembre se proyecta la apertura de inscripciones.",
-      accion: "Marca septiembre en tu calendario: cuando salga la OPEC podrás ver las vacantes disponibles por municipio y cargo. Consulta cnsc.gov.co periódicamente.",
-      url: "https://grupogeard.com/co/blog/sin-categoria/novedades-concursos-merito-2026-avanzan-convocatorias-esperadas-cnsc/"
-    },
-    {
-      fecha: "2026-06-19",
-      tag: "Oficial",
-      titulo: "El arraigo territorial tendrá \"relevancia especial\" en la valoración de antecedentes",
-      resumen: "El MEN confirmó que el arraigo territorial —conocimiento del contexto, permanencia y compromiso con las comunidades— será un componente clave en la tabla de valoración de antecedentes que construye la CNSC, junto a formación, experiencia relacionada y trayectoria. El insumo técnico se construyó con mesas de trabajo entre el MEN, FECODE y docentes provisionales, reportando 26.300 vacantes definitivas.",
-      accion: "Si tienes experiencia, formación o vínculo con la región o municipio donde aspiras a la plaza, reúne los soportes que lo certifiquen (constancias laborales, resoluciones de nombramiento, certificados de residencia o vinculación comunitaria) — es probable que puntúen en la valoración de antecedentes cuando se publique la tabla definitiva.",
-      url: "https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/429273:Gobierno-del-Cambio-abrira-mas-de-26-mil-plazas-docentes-para-fortalecer-la-educacion-publica"
     }
   ]
 };
