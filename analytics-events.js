@@ -34,9 +34,11 @@
   }
 
   // ── Lección abierta ────────────────────────────────────────────────────────
+  var currentLesson = null;
   var _openDrawer = window.openDrawer;
   window.openDrawer = function (lessonId) {
     _openDrawer(lessonId);
+    currentLesson = lessonId;
     track('lesson_open', lessonMeta(lessonId));
   };
 
@@ -106,13 +108,67 @@
     };
   }
 
-  // ── Clics en CTA y YouTube (delegación) ───────────────────────────────────
+  // ── Dónde ocurrió el clic (para saber qué ubicación convierte) ─────────────
+  function clickSurface(el) {
+    if (el.closest('.oc-card')) return 'oferta_leccion';   // tarjeta rotativa dentro del drawer
+    if (el.closest('.rf-hero')) return 'embudo_informe';   // card héroe del bloque final
+    if (el.closest('.ral-funnel')) return 'embudo_final';  // resto del bloque de productos
+    if (el.closest('.ral-cta')) return 'cta_inline';       // CTA embebido en una lección
+    return 'otro';
+  }
+
+  // ── Qué lección estaba abierta cuando hizo clic ───────────────────────────
+  function openLessonId() {
+    var d = document.getElementById('drawer');
+    var isOpen = d && d.classList.contains('open');
+    return isOpen ? currentLesson : null;
+  }
+
+  // ── Clics de conversión, CTA y YouTube (delegación) ───────────────────────
   document.addEventListener('click', function (e) {
-    var ralLink = e.target && e.target.closest && e.target.closest('a[href*="researchailab.com"]');
-    if (ralLink) {
-      track('cta_click', { destination: ralLink.href, context: 'quiz_result' });
+    var t = e.target;
+    if (!t || !t.closest) return;
+
+    // 1. WhatsApp — la señal de intención más fuerte que existe en el sitio
+    var waLink = t.closest('a[href*="wa.me"]');
+    if (waLink) {
+      track('whatsapp_click', {
+        surface: clickSurface(waLink),
+        lesson_id: openLessonId(),
+        link_text: (waLink.textContent || '').trim().slice(0, 60)
+      });
     }
-    var ytLink = e.target && e.target.closest && e.target.closest('.yt-link');
+
+    // 2. PDFs. Solo los propios cuentan como conversión; los externos (MEN, CNSC)
+    //    son material de consulta y se registran aparte para no ensuciar la métrica.
+    var pdfLink = t.closest('a[href$=".pdf"]');
+    if (pdfLink) {
+      var raw = pdfLink.getAttribute('href') || '';
+      var esPropio = pdfLink.hostname === location.hostname;
+      track(esPropio ? 'lead_magnet_download' : 'recurso_externo_pdf', {
+        file_name: raw.split('/').pop(),
+        surface: clickSurface(pdfLink),
+        lesson_id: openLessonId()
+      });
+    }
+
+    // 3. Salto al sitio principal (informe gratis, flujo, cursos)
+    var ralLink = t.closest('a[href*="researchailab.com"]');
+    if (ralLink) {
+      var href = ralLink.getAttribute('href') || '';
+      var offer = href.indexOf('informe') !== -1 ? 'informe_preliminar'
+                : href.indexOf('flujo')   !== -1 ? 'flujo_investigador'
+                : href.indexOf('cursos')  !== -1 ? 'catalogo_cursos'
+                : 'sitio_general';
+      track('funnel_cta_click', {
+        offer: offer,
+        destination: ralLink.href,
+        surface: clickSurface(ralLink),
+        lesson_id: openLessonId()
+      });
+    }
+
+    var ytLink = t.closest('.yt-link');
     if (ytLink) {
       var query = ytLink.textContent.replace(/▶️?\s*/g, '').trim();
       track('youtube_search', { search_query: query });

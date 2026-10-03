@@ -14,7 +14,16 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-0ZEX63DYF0');
+  // Sin este filtro, cada vez que se abre el sitio en local o en un preview de
+  // Netlify entra a GA4 como visita real (en julio fueron ~12 usuarios de 478).
+  // Se bloquean los entornos de prueba en vez de permitir un dominio concreto:
+  // así un dominio propio a futuro sigue midiendo sin tener que tocar esto.
+  var RAL_DEV = location.protocol === 'file:' ||
+                location.hostname === 'localhost' ||
+                location.hostname === '127.0.0.1' ||
+                location.hostname === '[::1]' ||
+                /--concurso-docente-ral\.netlify\.app$/.test(location.hostname);
+  if (!RAL_DEV) gtag('config', 'G-0ZEX63DYF0');
 </script>
 
 <meta charset="UTF-8">
@@ -26,12 +35,15 @@
 
 
 <title>Concurso Docente Colombia — Research AI Lab</title>
-<meta name="description" content="Prepárate para el concurso de ingreso al magisterio colombiano 2026 con simulacros tipo examen: pedagogía, normativa, lectura crítica y tu área disciplinar. Para docentes de aula y directivos docentes.">
+<meta name="description" content="Prepárate para el concurso docente colombiano 2026 (ingreso y ascenso) con simulacros tipo examen: pedagogía, normativa, lectura crítica y tu área disciplinar. Para docentes de aula y directivos docentes.">
 <meta name="theme-color" content="#16a34a">
 <meta property="og:title" content="Concurso Docente Colombia — Research AI Lab">
-<meta property="og:description" content="Prepárate para el concurso de ingreso al magisterio colombiano 2026 con simulacros tipo examen: pedagogía, normativa, lectura crítica y tu área disciplinar. Para docentes de aula y directivos docentes.">
+<meta property="og:description" content="Prepárate para el concurso docente colombiano 2026 (ingreso y ascenso) con simulacros tipo examen: pedagogía, normativa, lectura crítica y tu área disciplinar. Para docentes de aula y directivos docentes.">
 <meta property="og:type" content="website">
-<meta name="robots" content="noindex">
+<meta property="og:url" content="https://concurso-docente-ral.netlify.app/">
+<meta property="og:locale" content="es_CO">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://concurso-docente-ral.netlify.app/">
     <meta name="author" content="Juan Camilo Perez Hernandez">
     <meta name="copyright" content="© 2026 Research AI Lab. Todos los derechos reservados.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127793;</text></svg>">
@@ -257,7 +269,14 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 .hero-author-links a svg{width:16px;height:16px;fill:currentColor}
 .hero-author-email{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);text-decoration:none;transition:color .2s}
 .hero-author-email:hover{color:var(--claude)}
-@media(max-width:600px){.hero-author{flex-direction:column;text-align:center;gap:14px;padding:18px}.hero-author-info{align-items:center;text-align:center}.hero-author-services{justify-content:center}}
+@media(max-width:600px){.hero-author{flex-direction:column;text-align:center;gap:14px;padding:18px}.hero-author-info{align-items:center;text-align:center}.hero-author-services{justify-content:center}
+/* Comprimir el hero para que las 4 opciones del quiz queden sobre el fold en 375x812 */
+.hero{padding:20px 0 24px}
+.hero-badge{display:none}
+.hero-title .top{font-size:13px}
+.hero-title .main{font-size:30px}
+.hero-title .sub{font-size:12.5px;line-height:1.45;margin-top:6px}
+.hero-meta{flex-wrap:wrap;justify-content:center;gap:8px;padding:10px 16px;margin-top:18px}}
 
 
 
@@ -1016,13 +1035,28 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 
 
+<!-- SEO-JSONLD:inicio (generado por build-seo.js) -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Concurso Docente Colombia 2026","description":"Curso gratuito de preparación para el concurso docente colombiano 2026 (ingreso y ascenso): pedagogía, normativa, lectura crítica y área disciplinar, con simulacros tipo examen.","url":"https://concurso-docente-ral.netlify.app/","inLanguage":"es-CO","isAccessibleForFree":true,"educationalLevel":"Profesional","provider":{"@type":"Organization","name":"Research AI Lab","url":"https://researchailab.com"},"author":{"@type":"Person","name":"Juan Camilo Pérez Hernández"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"P6W","instructor":{"@type":"Person","name":"Juan Camilo Pérez Hernández"}},"hasPart":[{"@type":"LearningResource","name":"Estructura del concurso docente 2026","url":"https://concurso-docente-ral.netlify.app/leccion/a1"},{"@type":"LearningResource","name":"Anatomía de la pregunta: juicio situacional","url":"https://concurso-docente-ral.netlify.app/leccion/a2"},{"@type":"LearningResource","name":"Tu plan de estudio según tu perfil","url":"https://concurso-docente-ral.netlify.app/leccion/a3"},{"@type":"LearningResource","name":"🎯 Simulacro diagnóstico: 20 preguntas mixtas","url":"https://concurso-docente-ral.netlify.app/leccion/p1"},{"@type":"LearningResource","name":"Modelos pedagógicos y estrategias didácticas","url":"https://concurso-docente-ral.netlify.app/leccion/b1"},{"@type":"LearningResource","name":"Evaluación formativa y diseño curricular","url":"https://concurso-docente-ral.netlify.app/leccion/b2"},{"@type":"LearningResource","name":"Convivencia escolar y resolución de conflictos","url":"https://concurso-docente-ral.netlify.app/leccion/b3"},{"@type":"LearningResource","name":"Inclusión educativa y atención a la diversidad","url":"https://concurso-docente-ral.netlify.app/leccion/b4"},{"@type":"LearningResource","name":"🎯 Simulacro: 30 preguntas de pedagogía","url":"https://concurso-docente-ral.netlify.app/leccion/p2"},{"@type":"LearningResource","name":"Ley General de Educación y Decreto 1278","url":"https://concurso-docente-ral.netlify.app/leccion/c1"},{"@type":"LearningResource","name":"Normativa para docentes de aula","url":"https://concurso-docente-ral.netlify.app/leccion/c2"},{"@type":"LearningResource","name":"Normativa para directivos docentes","url":"https://concurso-docente-ral.netlify.app/leccion/c3"},{"@type":"LearningResource","name":"Código de Infancia y Cátedra de la Paz","url":"https://concurso-docente-ral.netlify.app/leccion/c4"},{"@type":"LearningResource","name":"🎯 Simulacro: 30 preguntas de normativa","url":"https://concurso-docente-ral.netlify.app/leccion/p3"},{"@type":"LearningResource","name":"Lectura crítica: comprensión, argumentación y postura","url":"https://concurso-docente-ral.netlify.app/leccion/d1"},{"@type":"LearningResource","name":"Razonamiento cuantitativo aplicado a educación","url":"https://concurso-docente-ral.netlify.app/leccion/d2"},{"@type":"LearningResource","name":"Competencias blandas y prueba psicotécnica","url":"https://concurso-docente-ral.netlify.app/leccion/d3"},{"@type":"LearningResource","name":"🎯 Simulacro: 30 preguntas de aptitudes en 45 min","url":"https://concurso-docente-ral.netlify.app/leccion/p4"},{"@type":"LearningResource","name":"Matemáticas y ciencias naturales","url":"https://concurso-docente-ral.netlify.app/leccion/e1"},{"@type":"LearningResource","name":"Lenguaje, ciencias sociales e inglés","url":"https://concurso-docente-ral.netlify.app/leccion/e2"},{"@type":"LearningResource","name":"Preescolar, primaria y orientación escolar","url":"https://concurso-docente-ral.netlify.app/leccion/e3"},{"@type":"LearningResource","name":"🎯 Simulacro: 20 preguntas de tu área","url":"https://concurso-docente-ral.netlify.app/leccion/p5"},{"@type":"LearningResource","name":"La entrevista y valoración de antecedentes","url":"https://concurso-docente-ral.netlify.app/leccion/f1"},{"@type":"LearningResource","name":"Estrategias el día del examen","url":"https://concurso-docente-ral.netlify.app/leccion/f2"},{"@type":"LearningResource","name":"🎯 Examen final: 40 preguntas en 60 minutos","url":"https://concurso-docente-ral.netlify.app/leccion/p6"}]}</script>
+<!-- SEO-JSONLD:fin -->
 </head>
 
 
 
 <body>
 
-
+<!-- Formulario estático para que el detector de Netlify lo registre en el deploy.
+     Los formularios inyectados por JS no los ve; el envío real lo hace captura.js
+     por fetch contra este mismo name. No se muestra nunca. -->
+<form name="alertas-concurso" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="email" name="correo">
+  <input type="text" name="cargo">
+  <input type="text" name="area">
+  <input type="text" name="municipio">
+  <input type="text" name="contexto">
+  <input type="text" name="origen">
+  <input type="text" name="perfil">
+  <input type="text" name="bot-field">
+</form>
 
 <canvas id="particles"></canvas>
 
@@ -1080,7 +1114,7 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 
 
-      <span class="sub" id="heroSub">Aprueba la prueba de ingreso al magisterio con simulacros tipo examen. Rutas diferenciadas para docente de aula y directivo docente, con más de 300 preguntas de práctica.</span>
+      <span class="sub" id="heroSub">Aprueba la prueba del concurso docente — de ingreso o de ascenso — con simulacros tipo examen. Rutas diferenciadas para docente de aula y directivo docente, con más de 300 preguntas de práctica.</span>
 
 
 
@@ -1240,6 +1274,8 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden){set
 <script src="analytics-events.js"></script>
 <script src="glosario.js"></script>
 <script src="diagnostico.js"></script>
+<script src="captura.js"></script>
+<script src="pruebate.js"></script>
 <script src="content.js"></script>
 
 
