@@ -29,3 +29,6 @@ Disallow: /
 
 User-agent: meta-externalagent
 Disallow: /
+
+# Reemplaza https://REEMPLAZAR-DOMINIO por el dominio real del curso.
+Sitemap: https://REEMPLAZAR-DOMINIO/sitemap.xml

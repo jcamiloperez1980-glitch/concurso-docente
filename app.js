@@ -615,7 +615,7 @@ function updateUI(){const completed=getCompleted();const total=ALL_IDS.length;co
 function initSearch(){const input=document.getElementById('searchInput');const count=document.getElementById('searchCount');input.addEventListener('input',()=>{const q=input.value.toLowerCase().trim();let vis=0;document.querySelectorAll('.lesson-card').forEach(c=>{const match=!q||c.textContent.toLowerCase().includes(q);c.classList.toggle('hidden',!match);if(match)vis++;});PHASES.forEach(p=>{const sec=document.getElementById('phase-'+p.id);const cards=sec.querySelectorAll('.lesson-card:not(.hidden)');sec.classList.toggle('hidden-phase',q&&cards.length===0);});count.textContent=q?`${vis}/${ALL_IDS.length}`:'';});}
 function initReveal(){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));}
 function initTocHL(){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{const id=e.target.id.replace('phase-','');const chip=document.querySelector(`.toc-chip[data-phase="${id}"]`);if(chip){if(e.isIntersecting)chip.classList.add('active');else chip.classList.remove('active');}});},{threshold:0.15});PHASES.forEach(p=>{const el=document.getElementById('phase-'+p.id);if(el)obs.observe(el);});}
-function initParticles(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let w,h,pts=[];const cols=['rgba(217,119,6,0.3)','rgba(251,191,36,0.25)','rgba(245,158,11,0.2)','rgba(167,139,250,0.2)'];function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<40;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*2+.5,color:cols[~~(Math.random()*cols.length)],life:Math.random()});function draw(){ctx.clearRect(0,0,w,h);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;p.life+=.003;const a=Math.sin(p.life*Math.PI)*.6;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color.replace(/[\d.]+\)$/,a+')');ctx.fill();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(217,119,6,${.06*(1-d/120)})`;ctx.lineWidth=.5;ctx.stroke();}}requestAnimationFrame(draw);}draw();}
+function initParticles(){const c=document.getElementById('particles');if(window.matchMedia&&(matchMedia('(max-width:768px)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)){c.style.display='none';return;}const ctx=c.getContext('2d');let w,h,pts=[];const cols=['rgba(217,119,6,0.3)','rgba(251,191,36,0.25)','rgba(245,158,11,0.2)','rgba(167,139,250,0.2)'];function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<40;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*2+.5,color:cols[~~(Math.random()*cols.length)],life:Math.random()});function draw(){ctx.clearRect(0,0,w,h);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;p.life+=.003;const a=Math.sin(p.life*Math.PI)*.6;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color.replace(/[\d.]+\)$/,a+')');ctx.fill();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(217,119,6,${.06*(1-d/120)})`;ctx.lineWidth=.5;ctx.stroke();}}requestAnimationFrame(draw);}draw();}
 document.addEventListener('keydown',e=>{if(e.key==='/'&&!e.ctrlKey&&!e.metaKey){e.preventDefault();document.getElementById('searchInput').focus()}if(e.key==='Escape'){if(currentDrawerLesson)closeDrawer();else{const i=document.getElementById('searchInput');i.value='';i.dispatchEvent(new Event('input'));i.blur();}}if(currentDrawerLesson&&e.key==='ArrowRight')navLesson(1);if(currentDrawerLesson&&e.key==='ArrowLeft')navLesson(-1);});
 renderToc();addControlBtns();renderMarquee();renderPhases();renderStack();renderTimeline();
 updateUI();initSearch();initReveal();initTocHL();initParticles();
@@ -889,7 +889,7 @@ const EXTRAS = {
 
   // CTA en el hero
   const gp = document.querySelector('.global-progress');
-  if (gp) { const cta = document.createElement('div'); cta.className = 'hero-cta'; cta.id = 'heroCta'; gp.after(cta); }
+  if (gp && !document.getElementById('heroCta')) { const cta = document.createElement('div'); cta.className = 'hero-cta'; cta.id = 'heroCta'; gp.after(cta); }
 
   // Lo que vas a lograr (después del marquee, antes de los módulos)
   const mq = document.querySelector('.marquee-wrap');
@@ -925,17 +925,21 @@ const EXTRAS = {
   }
 
   // CTA: continuar donde ibas / empezar / certificado
+  // Pinta el mismo botón en el hero (#heroCta) y en el cierre de la página (#finalCta)
   function renderCta(){
-    const box = document.getElementById('heroCta'); if (!box) return;
     const done = getCompleted();
+    const gpEl = document.querySelector('.global-progress');
+    if (gpEl) gpEl.classList.toggle('is-empty', !done.length);
     const next = ALL_IDS.find(id => !done.includes(id));
+    let html;
     if (!next) {
-      box.innerHTML = '<button class="cta-btn" onclick="openCertificate()"><span>🎓</span><span><span class="cta-sub">¡Curso completado!</span>Descargar mi certificado</span></button>';
-      return;
+      html = '<button class="cta-btn" onclick="openCertificate()"><span>🎓</span><span><span class="cta-sub">¡Curso completado!</span>Descargar mi certificado</span></button>';
+    } else {
+      const lesson = PHASES.flatMap(p => p.lessons).find(l => l.id === next);
+      const label = done.length ? 'Continuar donde ibas' : 'Empieza gratis ahora';
+      html = '<button class="cta-btn" data-cta="start" onclick="openDrawer(\'' + next + '\')"><span>▶</span><span><span class="cta-sub">' + label + '</span>' + lesson.title + '</span></button>';
     }
-    const lesson = PHASES.flatMap(p => p.lessons).find(l => l.id === next);
-    const label = done.length ? 'Continuar donde ibas' : 'Empieza gratis ahora';
-    box.innerHTML = '<button class="cta-btn" onclick="openDrawer(\'' + next + '\')"><span>▶</span><span><span class="cta-sub">' + label + '</span>' + lesson.title + '</span></button>';
+    ['heroCta', 'finalCta'].forEach(id => { const box = document.getElementById(id); if (box) box.innerHTML = html; });
   }
 
   window.openCertificate = function(){

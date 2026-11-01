@@ -112,6 +112,15 @@
     if (ralLink) {
       track('cta_click', { destination: ralLink.href, context: 'quiz_result' });
     }
+    // Botón "Empieza gratis / Continuar" (hero o cierre de página) y avisos por WhatsApp
+    var startBtn = e.target && e.target.closest && e.target.closest('[data-cta="start"]');
+    if (startBtn) {
+      track('start_course_click', { location: startBtn.closest('#finalCta') ? 'final' : 'hero' });
+    }
+    var waLink = e.target && e.target.closest && e.target.closest('a[href*="wa.me"]');
+    if (waLink) {
+      track('whatsapp_click', { location: waLink.className || 'link' });
+    }
     var ytLink = e.target && e.target.closest && e.target.closest('.yt-link');
     if (ytLink) {
       var query = ytLink.textContent.replace(/▶️?\s*/g, '').trim();
