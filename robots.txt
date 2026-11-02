@@ -29,3 +29,5 @@ Disallow: /
 
 User-agent: meta-externalagent
 Disallow: /
+
+Sitemap: https://concurso-docente-ral.netlify.app/sitemap.xml
