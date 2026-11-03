@@ -58,12 +58,16 @@
 
   var css =
     '.cap-in{margin:18px 0 4px;padding:17px 19px;border:1px solid var(--border);border-left:3px solid var(--claude);' +
-    'border-radius:12px;background:linear-gradient(135deg,rgba(217,119,6,.08),transparent 72%);text-align:left}' +
+    'border-radius:12px;background:linear-gradient(135deg,rgba(217,119,6,.08),transparent 72%);text-align:left;' +
+    'animation:capEntrada .4s ease-out}' +
+    '@keyframes capEntrada{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}' +
     '.cap-kicker{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;letter-spacing:.11em;' +
     'text-transform:uppercase;color:var(--claude);margin-bottom:7px}' +
     '.cap-h{font-size:15.5px;font-weight:800;line-height:1.35;color:var(--text);margin-bottom:7px}' +
     '.cap-p{font-size:13px;line-height:1.6;color:var(--muted);margin-bottom:12px}' +
     '.cap-p strong{color:var(--text)}' +
+    '.cap-urg{display:inline-block;padding:4px 10px;border-radius:100px;font-size:11px;font-weight:700;' +
+    'background:rgba(217,119,6,.13);color:var(--claude);margin-bottom:10px}' +
     '.cap-cargos{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:4px}' +
     '.cap-cargo{padding:9px 14px;border-radius:100px;background:var(--card-2);border:1px solid var(--border);' +
     'color:var(--muted);font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer;transition:.16s}' +
@@ -147,11 +151,25 @@
     var elegido = null;
 
     function paso1() {
+      var titulo = opts.titulo || '¿A qué cargo aspiras?';
+      var sub = 'Lo uso para avisarte solo de lo que te sirve — y para decidir ' +
+        'qué material construyo primero.';
+
+      if (opts.acerto === true) {
+        titulo = 'Vas bien — ¿te aviso cuando abran inscripciones?';
+        sub = 'La preparación genérica ya la tienes acá gratis. Lo que desempata es tu área específica. ' +
+          'Dime a qué cargo aspiras y te aviso primero cuando publique ese material.';
+      } else if (opts.acerto === false) {
+        titulo = 'Tranquilo — esto se entrena. ¿Te aviso cuando se abra?';
+        sub = 'Tienes tiempo. Pero la OPEC sale en septiembre y las inscripciones cierran rápido. ' +
+          'Dime tu cargo y te escribo cuando se acerque la ventana.';
+      }
+
       div.innerHTML =
-        '<div class="cap-kicker">📌 Falta lo tuyo</div>' +
-        '<div class="cap-h">' + (opts.titulo || '¿A qué cargo aspiras?') + '</div>' +
-        '<div class="cap-p">Lo uso para avisarte solo de lo que te sirve — y para decidir ' +
-        'qué material construyo primero.</div>' +
+        '<div class="cap-kicker">📌 Inscripciones nov–dic 2026</div>' +
+        '<div class="cap-urg">⏳ OPEC proyectada: septiembre</div>' +
+        '<div class="cap-h">' + titulo + '</div>' +
+        '<div class="cap-p">' + sub + '</div>' +
         '<div class="cap-cargos">' +
           CARGOS.map(function (c, i) {
             return '<button class="cap-cargo" data-i="' + i + '">' + c.label + '</button>';
@@ -169,11 +187,8 @@
     function paso2() {
       div.innerHTML =
         '<div class="cap-kicker">📌 ' + esc(elegido.label) + '</div>' +
-        '<div class="cap-h">Te aviso cuando abran las inscripciones</div>' +
+        '<div class="cap-h">Solo falta tu correo</div>' +
         '<div class="cap-p">' + promesa(elegido) + '</div>' +
-        '<div class="cap-p">La OPEC sale en <strong>septiembre</strong> y las inscripciones se ' +
-        'proyectan para <strong>noviembre–diciembre</strong>. Si se te pasa la ventana, el ' +
-        'siguiente concurso tarda años.</div>' +
         (elegido.area
           ? '<select class="cap-f" id="capArea"><option value="">¿Cuál es tu área?</option>' +
             AREAS.map(function (a) { return '<option>' + a + '</option>'; }).join('') + '</select>'

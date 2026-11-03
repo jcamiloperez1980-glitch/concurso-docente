@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "concurso-docente-static",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8934"],
-      "port": 8934
+      "name": "concurso-docente",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", ".", "-p", "8091", "-c-1"],
+      "port": 8091
     }
   ]
 }

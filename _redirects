@@ -1,0 +1,33 @@
+/*.bak    /404.html    404
+/*.old    /404.html    404
+/*.sql    /404.html    404
+/*.env    /404.html    404
+/*.log    /404.html    404
+
+# 301: versiones .html -> URL limpia (evita contenido duplicado en Google)
+/index.html            /              301!
+/leccion/a1.html       /leccion/a1    301!
+/leccion/a2.html       /leccion/a2    301!
+/leccion/a3.html       /leccion/a3    301!
+/leccion/p1.html       /leccion/p1    301!
+/leccion/b1.html       /leccion/b1    301!
+/leccion/b2.html       /leccion/b2    301!
+/leccion/b3.html       /leccion/b3    301!
+/leccion/b4.html       /leccion/b4    301!
+/leccion/p2.html       /leccion/p2    301!
+/leccion/c1.html       /leccion/c1    301!
+/leccion/c2.html       /leccion/c2    301!
+/leccion/c3.html       /leccion/c3    301!
+/leccion/c4.html       /leccion/c4    301!
+/leccion/p3.html       /leccion/p3    301!
+/leccion/d1.html       /leccion/d1    301!
+/leccion/d2.html       /leccion/d2    301!
+/leccion/d3.html       /leccion/d3    301!
+/leccion/p4.html       /leccion/p4    301!
+/leccion/e1.html       /leccion/e1    301!
+/leccion/e2.html       /leccion/e2    301!
+/leccion/e3.html       /leccion/e3    301!
+/leccion/p5.html       /leccion/p5    301!
+/leccion/f1.html       /leccion/f1    301!
+/leccion/f2.html       /leccion/f2    301!
+/leccion/p6.html       /leccion/p6    301!

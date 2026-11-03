@@ -122,8 +122,87 @@ padding-top:22px;border-top:1px solid var(--border);font-size:14px}
 footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--border);
 font-size:12.5px;color:var(--dim)}
 footer a{color:var(--claude);text-decoration:none}
-@media(max-width:600px){h1{font-size:25px}.wrap{padding:20px 16px 48px}}
+.ral-seo{margin:36px 0 8px;padding:22px 24px;background:var(--card);border:1px solid var(--border);
+border-radius:12px;position:relative;overflow:hidden}
+.ral-seo::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+background:linear-gradient(180deg,var(--claude),var(--claude-2))}
+.ral-seo .ral-k{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--claude);margin-bottom:6px}
+.ral-seo .ral-t{font-size:17px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
+.ral-seo .ral-p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.ral-seo .ral-btn{display:inline-block;padding:10px 20px;background:var(--claude);color:#fff;
+font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.ral-seo .ral-btn:hover{opacity:.88}
+.ral-seo .ral-alt{display:inline-block;margin-left:12px;font-size:13px;color:var(--claude);
+text-decoration:none;font-weight:600}
+.ral-seo .ral-alt:hover{text-decoration:underline}
+@media(max-width:600px){h1{font-size:25px}.wrap{padding:20px 16px 48px}
+.ral-seo .ral-btn,.ral-seo .ral-alt{display:block;text-align:center;margin:6px 0 0}}
 `.trim();
+
+// ── CTAs de Research AI Lab para páginas SEO ──────────────────────────────
+// Las páginas SEO son la puerta de entrada orgánica: Google las indexa y las
+// sirve a gente que busca "concurso docente". Si solo tienen un enlace de
+// vuelta al curso, el visitante nunca descubre los servicios de pago.
+const WA = 'https://wa.me/573116128640';
+const RAL = 'https://researchailab.com';
+function waMsg(msg) { return WA + '?text=' + encodeURIComponent(msg); }
+
+const RAL_CTAS = {
+  thesis: {
+    kicker: 'Research AI Lab',
+    titulo: '¿Estás haciendo o planeas tu tesis de posgrado?',
+    texto: 'Para subir en el escalafón necesitas un posgrado, y toda tesis empieza por la revisión de literatura. Cuéntanos tu tema y te devolvemos <strong>gratis</strong> un informe preliminar con las referencias que necesitas.',
+    btn: { text: 'Enviar mi tema → informe gratis', href: RAL + '/informe.html' },
+    alt: { text: 'O por WhatsApp', href: waMsg('Hola, vi el curso del Concurso Docente. Estoy haciendo mi tesis sobre: [mi tema]. ¿Me ayudan con el informe de referencias?') }
+  },
+  flujo: {
+    kicker: 'Research AI Lab',
+    titulo: '¿Necesitas ayuda con tu investigación?',
+    texto: 'Asesoría personalizada + entregables reales: revisión de literatura sistematizada, vault de Obsidian con tus referencias organizadas y guía paso a paso con tu tutor de tesis.',
+    btn: { text: 'Conocer el Flujo del Investigador', href: RAL + '/flujo.html' },
+    alt: { text: 'Preguntar por WhatsApp', href: waMsg('Hola, vi el curso del Concurso Docente. Me interesa la asesoría de investigación. ¿Cómo funciona?') }
+  },
+  prompts: {
+    kicker: 'Recurso gratuito',
+    titulo: '8 prompts de IA para planeación docente',
+    texto: 'Pack listo para copiar y pegar en Claude o ChatGPT: planeación de clase, rúbricas, retroalimentación y gestión de aula. Descárgalo gratis.',
+    btn: { text: 'Descargar el pack gratis', href: '/Pack-8-Prompts-Planeacion-Docente.pdf' },
+    alt: { text: 'Más recursos en Research AI Lab', href: RAL }
+  },
+  cursos: {
+    kicker: 'Research AI Lab',
+    titulo: '¿Te gustó este curso? Aprende a crear el tuyo',
+    texto: 'Guía gratuita con el método completo: backward design, IA para generar contenido validado, y cómo un curso gratis se convierte en el imán de un negocio real.',
+    btn: { text: 'Descargar la guía gratis', href: '/Metodo-Crea-tu-Curso-con-IA.pdf' },
+    alt: { text: 'Ver todos los cursos', href: RAL + '/#cursos' }
+  }
+};
+
+// Rotación: tesis en lecciones de normativa/final (C, F, P), flujo en aptitudes
+// (D), prompts en pedagogía (B), cursos en orientación (A, E).
+function elegirCta(id) {
+  const letra = id.charAt(0).toUpperCase();
+  if (letra === 'C' || letra === 'F') return RAL_CTAS.thesis;
+  if (letra === 'P') return RAL_CTAS.flujo;
+  if (letra === 'D') return RAL_CTAS.prompts;
+  if (letra === 'B') return RAL_CTAS.prompts;
+  if (letra === 'A') return RAL_CTAS.cursos;
+  if (letra === 'E') return RAL_CTAS.thesis;
+  return RAL_CTAS.thesis;
+}
+
+function htmlCta(id) {
+  const c = elegirCta(id);
+  return `
+<div class="ral-seo">
+  <div class="ral-k">${c.kicker}</div>
+  <div class="ral-t">${c.titulo}</div>
+  <div class="ral-p">${c.texto}</div>
+  <a class="ral-btn" href="${esc(c.btn.href)}" target="_blank" rel="noopener">${c.btn.text}</a>
+  <a class="ral-alt" href="${esc(c.alt.href)}" target="_blank" rel="noopener">${c.alt.text} →</a>
+</div>`;
+}
 
 // content.js escribe h3/h4 porque dentro del drawer cuelgan del título de la
 // lección. Acá el título es el h1 de la página, así que se suben un nivel para
@@ -203,9 +282,11 @@ function pagina(lesson, fase, prev, next, html) {
 
 <article class="cuerpo">${subirEncabezados(html)}</article>
 
+${htmlCta(lesson.id)}
+
 <a class="cta" href="/#phase-${fase.id}">
   <b>Practica esta lección en el curso completo</b>
-  <span>31 lecciones y más de 300 preguntas tipo examen, con la explicación de por qué cada distractor está mal. Gratis y sin registro.</span>
+  <span>31 lecciones y más de 430 preguntas tipo examen, con la explicación de por qué cada distractor está mal. Gratis y sin registro.</span>
 </a>
 
 <nav class="nav">

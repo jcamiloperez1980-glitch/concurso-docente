@@ -42,11 +42,20 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://concurso-docente-ral.netlify.app/">
 <meta property="og:locale" content="es_CO">
+<meta property="og:image" content="https://concurso-docente-ral.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ResearchAILab">
+<meta name="twitter:title" content="Concurso Docente Colombia — Research AI Lab">
+<meta name="twitter:description" content="Prepárate para el concurso docente colombiano 2026 (ingreso y ascenso) con simulacros tipo examen: pedagogía, normativa, lectura crítica y tu área disciplinar.">
+<meta name="twitter:image" content="https://concurso-docente-ral.netlify.app/og-image.jpg">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://concurso-docente-ral.netlify.app/">
     <meta name="author" content="Juan Camilo Perez Hernandez">
     <meta name="copyright" content="© 2026 Research AI Lab. Todos los derechos reservados.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127793;</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%2316a34a'/><text x='90' y='140' font-size='130' text-anchor='middle'>🌱</text></svg>">
 
 
 
@@ -509,6 +518,7 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 
 .lesson-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.3}
+.lesson-title a{color:inherit;text-decoration:none}
 
 
 
@@ -871,6 +881,16 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 
 
+.curso-map{margin-top:64px;padding:0 20px}
+.curso-map h2{font-size:22px;font-weight:800;text-align:center;margin-bottom:8px;color:var(--text)}
+.curso-map .map-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:28px}
+.curso-map .map-mod{margin-bottom:24px}
+.curso-map .map-mod h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--claude);margin-bottom:8px}
+.curso-map .map-mod ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px}
+.curso-map .map-mod li a{display:block;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);text-decoration:none;font-size:13.5px;transition:.2s}
+.curso-map .map-mod li a:hover{border-color:var(--claude);color:var(--claude)}
+.curso-map .map-mod li a .map-id{font-weight:700;color:var(--claude);margin-right:6px}
+
 .footer{margin-top:80px;padding:32px 0;border-top:1px solid var(--border);text-align:center}
 
 
@@ -1029,7 +1049,11 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 @media(max-width:768px){.app{padding:0 16px 60px}.lessons{padding-left:0;grid-template-columns:1fr}.yt-links{padding-left:0}.phase::before{display:none}.toc-bar{margin:24px -16px 36px;padding:12px 16px}.marquee-wrap{margin:0 -16px 40px}.stack-section{padding:24px}.stack-grid{grid-template-columns:1fr}.drawer{width:100vw}.ar-badge{bottom:12px;right:12px}}
 
-
+.sim-q{position:relative}
+.sim-q[data-badge]::before{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 9px;border-radius:100px;margin-bottom:8px}
+.sim-q[data-badge="oficial"]::before{content:"Pregunta oficial";background:rgba(37,99,235,.12);color:var(--p3);border:1px solid rgba(37,99,235,.3)}
+.sim-q[data-badge="tema-pasado"]::before{content:"Tema del examen pasado";background:rgba(217,119,6,.12);color:var(--p5);border:1px solid rgba(217,119,6,.3)}
+.sim-q[data-badge="formato-cnsc"]::before{content:"Formato CNSC real";background:rgba(22,163,74,.12);color:var(--p6);border:1px solid rgba(22,163,74,.3)}
 
 </style>
 
@@ -1114,7 +1138,7 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 
 
-      <span class="sub" id="heroSub">Aprueba la prueba del concurso docente — de ingreso o de ascenso — con simulacros tipo examen. Rutas diferenciadas para docente de aula y directivo docente, con más de 300 preguntas de práctica.</span>
+      <span class="sub" id="heroSub">Aprueba la prueba del concurso docente — de ingreso o de ascenso — con simulacros tipo examen. Rutas diferenciadas para docente de aula y directivo docente, con más de 430 preguntas de práctica.</span>
 
 
 
@@ -1186,6 +1210,51 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
 
 
   <div id="phasesContainer"></div>
+  <noscript>
+    <h2>Módulo 01 — Conoce el examen y elige tu ruta</h2>
+    <ul>
+      <li><a href="/leccion/a1">Estructura del concurso docente 2026</a></li>
+      <li><a href="/leccion/a2">Anatomía de la pregunta: juicio situacional</a></li>
+      <li><a href="/leccion/a3">Tu plan de estudio según tu perfil</a></li>
+      <li><a href="/leccion/p1">Simulacro diagnóstico: 20 preguntas mixtas</a></li>
+    </ul>
+    <h2>Módulo 02 — Competencias pedagógicas</h2>
+    <ul>
+      <li><a href="/leccion/b1">Modelos pedagógicos y estrategias didácticas</a></li>
+      <li><a href="/leccion/b2">Evaluación formativa y diseño curricular</a></li>
+      <li><a href="/leccion/b3">Convivencia escolar y resolución de conflictos</a></li>
+      <li><a href="/leccion/b4">Inclusión educativa y atención a la diversidad</a></li>
+      <li><a href="/leccion/p2">Simulacro: 30 preguntas de pedagogía</a></li>
+    </ul>
+    <h2>Módulo 03 — Normativa educativa por perfil</h2>
+    <ul>
+      <li><a href="/leccion/c1">Ley General de Educación y Decreto 1278</a></li>
+      <li><a href="/leccion/c2">Normativa para docentes de aula</a></li>
+      <li><a href="/leccion/c3">Normativa para directivos docentes</a></li>
+      <li><a href="/leccion/c4">Código de Infancia y Cátedra de la Paz</a></li>
+      <li><a href="/leccion/p3">Simulacro: 30 preguntas de normativa</a></li>
+    </ul>
+    <h2>Módulo 04 — Lectura crítica, razonamiento y competencias blandas</h2>
+    <ul>
+      <li><a href="/leccion/d1">Lectura crítica: comprensión, argumentación y postura</a></li>
+      <li><a href="/leccion/d2">Razonamiento cuantitativo aplicado a educación</a></li>
+      <li><a href="/leccion/d3">Competencias blandas y prueba psicotécnica</a></li>
+      <li><a href="/leccion/p4">Simulacro: 30 preguntas de aptitudes en 45 min</a></li>
+    </ul>
+    <h2>Módulo 05 — Simulacros por área disciplinar</h2>
+    <ul>
+      <li><a href="/leccion/e1">Matemáticas y ciencias naturales</a></li>
+      <li><a href="/leccion/e2">Lenguaje, ciencias sociales e inglés</a></li>
+      <li><a href="/leccion/e3">Preescolar, primaria y orientación escolar</a></li>
+      <li><a href="/leccion/p5">Simulacro: 30 preguntas de tu área</a></li>
+    </ul>
+    <h2>Módulo 06 — Examen final y estrategias</h2>
+    <ul>
+      <li><a href="/leccion/f1">La entrevista y la valoración de antecedentes</a></li>
+      <li><a href="/leccion/f2">Estrategias el día del examen</a></li>
+      <li><a href="/leccion/p6">Examen final: 40 preguntas en 60 minutos</a></li>
+    </ul>
+  </noscript>
 
 
 
@@ -1196,6 +1265,72 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(900px a
   <div class="timeline-section" id="timelineSection"></div>
 
 
+
+  <section class="curso-map" id="mapa">
+    <h2>Mapa del curso</h2>
+    <p class="map-sub">25 lecciones gratuitas con simulacros tipo examen real</p>
+
+    <div class="map-mod">
+      <h3>01 — Conoce el examen y elige tu ruta</h3>
+      <ul>
+        <li><a href="/leccion/a1"><span class="map-id">A1</span>Estructura del concurso docente 2026</a></li>
+        <li><a href="/leccion/a2"><span class="map-id">A2</span>Anatomía de la pregunta: juicio situacional</a></li>
+        <li><a href="/leccion/a3"><span class="map-id">A3</span>Tu plan de estudio según tu perfil</a></li>
+        <li><a href="/leccion/p1"><span class="map-id">P1</span>Simulacro diagnóstico: 20 preguntas mixtas</a></li>
+      </ul>
+    </div>
+
+    <div class="map-mod">
+      <h3>02 — Competencias pedagógicas</h3>
+      <ul>
+        <li><a href="/leccion/b1"><span class="map-id">B1</span>Modelos pedagógicos y estrategias didácticas</a></li>
+        <li><a href="/leccion/b2"><span class="map-id">B2</span>Evaluación formativa y diseño curricular</a></li>
+        <li><a href="/leccion/b3"><span class="map-id">B3</span>Convivencia escolar y resolución de conflictos</a></li>
+        <li><a href="/leccion/b4"><span class="map-id">B4</span>Inclusión educativa y atención a la diversidad</a></li>
+        <li><a href="/leccion/p2"><span class="map-id">P2</span>Simulacro: 30 preguntas de pedagogía</a></li>
+      </ul>
+    </div>
+
+    <div class="map-mod">
+      <h3>03 — Normativa educativa por perfil</h3>
+      <ul>
+        <li><a href="/leccion/c1"><span class="map-id">C1</span>Ley General de Educación y Decreto 1278</a></li>
+        <li><a href="/leccion/c2"><span class="map-id">C2</span>Normativa para docentes de aula</a></li>
+        <li><a href="/leccion/c3"><span class="map-id">C3</span>Normativa para directivos docentes</a></li>
+        <li><a href="/leccion/c4"><span class="map-id">C4</span>Código de Infancia y Cátedra de la Paz</a></li>
+        <li><a href="/leccion/p3"><span class="map-id">P3</span>Simulacro: 30 preguntas de normativa</a></li>
+      </ul>
+    </div>
+
+    <div class="map-mod">
+      <h3>04 — Lectura crítica, razonamiento y competencias blandas</h3>
+      <ul>
+        <li><a href="/leccion/d1"><span class="map-id">D1</span>Lectura crítica: comprensión, argumentación y postura</a></li>
+        <li><a href="/leccion/d2"><span class="map-id">D2</span>Razonamiento cuantitativo aplicado a educación</a></li>
+        <li><a href="/leccion/d3"><span class="map-id">D3</span>Competencias blandas y prueba psicotécnica</a></li>
+        <li><a href="/leccion/p4"><span class="map-id">P4</span>Simulacro: 30 preguntas de aptitudes en 45 min</a></li>
+      </ul>
+    </div>
+
+    <div class="map-mod">
+      <h3>05 — Simulacros por área disciplinar</h3>
+      <ul>
+        <li><a href="/leccion/e1"><span class="map-id">E1</span>Matemáticas y ciencias naturales</a></li>
+        <li><a href="/leccion/e2"><span class="map-id">E2</span>Lenguaje, ciencias sociales e inglés</a></li>
+        <li><a href="/leccion/e3"><span class="map-id">E3</span>Preescolar, primaria y orientación escolar</a></li>
+        <li><a href="/leccion/p5"><span class="map-id">P5</span>Simulacro: 30 preguntas de tu área</a></li>
+      </ul>
+    </div>
+
+    <div class="map-mod">
+      <h3>06 — Examen final y estrategias</h3>
+      <ul>
+        <li><a href="/leccion/f1"><span class="map-id">F1</span>La entrevista y la valoración de antecedentes</a></li>
+        <li><a href="/leccion/f2"><span class="map-id">F2</span>Estrategias el día del examen</a></li>
+        <li><a href="/leccion/p6"><span class="map-id">P6</span>Examen final: 40 preguntas en 60 minutos</a></li>
+      </ul>
+    </div>
+  </section>
 
   <div class="footer">
 
@@ -1261,22 +1396,22 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden){set
 
 
 
-<script src="app.js"></script>
-<script src="busqueda-scroll.js"></script>
-<script src="examen-final.js"></script>
-<script src="dashboard.js"></script>
-<script src="videos-data.js"></script>
-<script src="videos.js"></script>
-<script src="ofertas.js"></script>
-<script src="novedades.js"></script>
-<script src="novedades-ui.js"></script>
-<script src="regalo.js"></script>
-<script src="analytics-events.js"></script>
-<script src="glosario.js"></script>
-<script src="diagnostico.js"></script>
-<script src="captura.js"></script>
-<script src="pruebate.js"></script>
-<script src="content.js"></script>
+<script defer src="app.js"></script>
+<script defer src="busqueda-scroll.js"></script>
+<script defer src="examen-final.js"></script>
+<script defer src="dashboard.js"></script>
+<script defer src="videos-data.js"></script>
+<script defer src="videos.js"></script>
+<script defer src="ofertas.js"></script>
+<script defer src="novedades.js"></script>
+<script defer src="novedades-ui.js"></script>
+<script defer src="regalo.js"></script>
+<script defer src="analytics-events.js"></script>
+<script defer src="glosario.js"></script>
+<script defer src="diagnostico.js"></script>
+<script defer src="captura.js"></script>
+<script defer src="pruebate.js"></script>
+<script defer src="content.js"></script>
 
 
 

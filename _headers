@@ -11,3 +11,15 @@
 /app.js
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
+
+/*.bak
+  X-Robots-Tag: noindex, nofollow
+
+/*.old
+  X-Robots-Tag: noindex, nofollow
+
+/*.sql
+  X-Robots-Tag: noindex, nofollow
+
+/*.env
+  X-Robots-Tag: noindex, nofollow

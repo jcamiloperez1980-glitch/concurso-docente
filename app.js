@@ -461,7 +461,7 @@ const STACK = [
    {
     "icon": "📝",
     "name": "Simulacros del curso",
-    "desc": "Más de 300 preguntas tipo examen con justificación"
+    "desc": "Más de 430 preguntas tipo examen con justificación"
    },
    {
     "icon": "⏱️",
@@ -520,7 +520,7 @@ const TIMELINE = [
 const LANG_ES = {
   badge:'RESEARCH AI LAB · CONCURSO DOCENTE COLOMBIA',
   heroTop:'Research AI Lab', heroMain:'CONCURSO DOCENTE COLOMBIA',
-  heroSub:'Aprueba la prueba de ingreso al magisterio con simulacros tipo examen. Rutas diferenciadas para docente de aula y directivo docente, con más de 300 preguntas de práctica.',
+  heroSub:'Aprueba la prueba de ingreso al magisterio con simulacros tipo examen. Rutas diferenciadas para docente de aula y directivo docente, con más de 430 preguntas de práctica.',
   heroCurriculum:'EL CURSO', phases:'MÓDULOS', lessons:'LECCIONES', weeks:'SEMANAS',
   progressLabel:'Progreso total', tocLabel:'Ir a', searchPlaceholder:'Buscar lecciones, herramientas... (pulsa /)',
   stackTitle:'🛠️ Herramientas del curso', stackSub:'Todas gratuitas o con versión gratis',
@@ -535,7 +535,7 @@ const LANG_ES = {
 const LANG_EN = {
   badge:'RESEARCH AI LAB · COLOMBIAN TEACHING EXAM PREP',
   heroTop:'Research AI Lab', heroMain:'COLOMBIAN TEACHING EXAM PREP',
-  heroSub:'Pass the Colombian public teaching entrance exam with exam-style practice. Separate tracks for classroom teachers and school leaders, with 300+ practice questions.',
+  heroSub:'Pass the Colombian public teaching entrance exam with exam-style practice. Separate tracks for classroom teachers and school leaders, with 430+ practice questions.',
   heroCurriculum:'THE COURSE', phases:'MODULES', lessons:'LESSONS', weeks:'WEEKS',
   progressLabel:'Overall Progress', tocLabel:'Jump to', searchPlaceholder:'Search lessons, tools... (press /)',
   stackTitle:'🛠️ Course Tools', stackSub:'All free or freemium',
@@ -608,7 +608,7 @@ function closeDrawer(){var d=document.getElementById('drawer');var o=document.ge
 function navLesson(dir){const idx=ALL_IDS.indexOf(currentDrawerLesson);const next=idx+dir;if(next>=0&&next<ALL_IDS.length)openDrawer(ALL_IDS[next]);}
 function renderToc(){const bar=document.getElementById('tocBar');PHASES.forEach(p=>{const a=document.createElement('a');a.className='toc-chip';a.href='#phase-'+p.id;a.style.setProperty('--accent',p.color);a.dataset.phase=p.id;a.innerHTML=`<span class="chip-num">${p.num}</span><span class="chip-check">✓</span>${p.short||p.title.split(' ').slice(0,2).join(' ')}`;bar.appendChild(a);});}
 function renderMarquee(){document.getElementById('marquee').innerHTML=[...TOOLS,...TOOLS].map(t=>`<span class="brand-chip"><span class="em">${t.icon}</span>${t.name}</span>`).join('');}
-function renderPhases(){document.getElementById('phasesContainer').innerHTML=PHASES.map(p=>`<section class="phase reveal" id="phase-${p.id}" style="--c:${p.color}"><div class="phase-header"><div class="phase-number" data-phase="${p.id}">${p.num}</div><div class="phase-info"><h2 class="phase-title">${p.title}</h2><div class="phase-subtitle">${p.subtitle}</div><div class="phase-progress"><div class="phase-progress-track"><div class="phase-progress-fill" data-phase-fill="${p.id}" style="width:0%"></div></div><span class="phase-progress-text" data-phase-pct="${p.id}">0%</span></div></div></div><div class="lessons" id="lessons-${p.id}">${p.lessons.map(l=>`<div class="lesson-card" data-id="${l.id}" style="--c:${p.color}" onclick="openDrawer('${l.id}')"><div class="lesson-num">${l.id}</div><div class="lesson-title">${l.title}</div><ul class="lesson-bullets">${l.bullets.map(b=>`<li>${b}</li>`).join('')}</ul><div class="lesson-source">${l.source}</div><button class="check-btn" onclick="toggleLesson('${l.id}',event)">○</button></div>`).join('')}</div>${p.youtube.length?`<div class="yt-links">${p.youtube.map(y=>`<a href="https://www.youtube.com/results?search_query=${encodeURIComponent(y.title)}" target="_blank" class="yt-link"><span class="yt-icon">▶️</span>${y.title}</a>`).join('')}</div>`:''}</section>`).join('');}
+function renderPhases(){document.getElementById('phasesContainer').innerHTML=PHASES.map(p=>`<section class="phase reveal" id="phase-${p.id}" style="--c:${p.color}"><div class="phase-header"><div class="phase-number" data-phase="${p.id}">${p.num}</div><div class="phase-info"><h2 class="phase-title">${p.title}</h2><div class="phase-subtitle">${p.subtitle}</div><div class="phase-progress"><div class="phase-progress-track"><div class="phase-progress-fill" data-phase-fill="${p.id}" style="width:0%"></div></div><span class="phase-progress-text" data-phase-pct="${p.id}">0%</span></div></div></div><div class="lessons" id="lessons-${p.id}">${p.lessons.map(l=>`<div class="lesson-card" data-id="${l.id}" style="--c:${p.color}" onclick="openDrawer('${l.id}')"><div class="lesson-num">${l.id}</div><div class="lesson-title">${l.id.startsWith('Q')?l.title:`<a href="/leccion/${l.id.toLowerCase()}" onclick="event.preventDefault();event.stopPropagation();openDrawer('${l.id}')">${l.title}</a>`}</div><ul class="lesson-bullets">${l.bullets.map(b=>`<li>${b}</li>`).join('')}</ul><div class="lesson-source">${l.source}</div><button class="check-btn" onclick="toggleLesson('${l.id}',event)">○</button></div>`).join('')}</div>${p.youtube.length?`<div class="yt-links">${p.youtube.map(y=>`<a href="https://www.youtube.com/results?search_query=${encodeURIComponent(y.title)}" target="_blank" class="yt-link"><span class="yt-icon">▶️</span>${y.title}</a>`).join('')}</div>`:''}</section>`).join('');}
 function renderStack(){document.getElementById('stackSection').innerHTML=`<h2 class="stack-title">${LANG.stackTitle}</h2><p class="stack-sub">${LANG.stackSub}</p>${STACK.map(c=>`<h3 class="stack-cat">${c.cat}</h3><div class="stack-grid">${c.items.map(i=>`<div class="stack-item"><div class="stack-icon">${i.icon}</div><div><span class="stack-name">${i.name}</span><br><span class="stack-desc">${i.desc}</span></div></div>`).join('')}</div>`).join('')}`;}
 function renderTimeline(){document.getElementById('timelineSection').innerHTML=`<h2 class="timeline-title">${LANG.timelineTitle}</h2><div class="timeline">${TIMELINE.map(t=>`<div class="tl-item" style="--c:${t.color}"><div class="tl-dot"></div><div class="tl-week">${t.week}</div><div><div class="tl-label">${t.label}</div><div class="tl-desc">${t.desc}</div><div class="tl-milestone">✅ ${t.milestone}</div></div></div>`).join('')}</div>`;}
 function updateUI(){const completed=getCompleted();const total=ALL_IDS.length;const pct=total?Math.round((completed.length/total)*100):0;document.getElementById('globalProgressFill').style.width=pct+'%';document.getElementById('globalProgressPct').textContent=pct+'%';document.getElementById('progressBar').style.width=pct+'%';PHASES.forEach(p=>{const done=p.lessons.filter(l=>completed.includes(l.id)).length;const t=p.lessons.length;const pp=t?Math.round((done/t)*100):0;const fill=document.querySelector(`[data-phase-fill="${p.id}"]`);const txt=document.querySelector(`[data-phase-pct="${p.id}"]`);const num=document.querySelector(`.phase-number[data-phase="${p.id}"]`);if(fill)fill.style.width=pp+'%';if(txt)txt.textContent=pp+'%';if(num){if(pp===100){num.classList.add('completed');num.textContent='✓'}else{num.classList.remove('completed');num.textContent=p.num}}const chip=document.querySelector(`.toc-chip[data-phase="${p.id}"]`);if(chip){if(pp===100)chip.classList.add('completed');else chip.classList.remove('completed');}});document.querySelectorAll('.lesson-card').forEach(c=>{if(completed.includes(c.dataset.id))c.classList.add('completed');else c.classList.remove('completed');});}
@@ -853,10 +853,10 @@ function gradeQuiz(qid){
 const EXTRAS = {
   course: 'Concurso Docente Colombia',
   accent: '#b45309',
-  certDetail: '6 módulos · 22 lecciones · 6 simulacros completos · más de 300 preguntas tipo examen resueltas',
+  certDetail: '6 módulos · 22 lecciones · 6 simulacros completos · más de 430 preguntas tipo examen resueltas',
   outcomes: [
  "Dominas la <strong>estructura completa del concurso</strong>: etapas, puntajes y qué evalúa cada prueba",
- "Resuelves <strong>más de 300 preguntas tipo examen</strong> de juicio situacional con retroalimentación normativa",
+ "Resuelves <strong>más de 430 preguntas tipo examen</strong> de juicio situacional con retroalimentación normativa",
  "Un <strong>plan de estudio según tu perfil</strong>: docente de aula o directivo docente",
  "Llegas al examen con <strong>6 simulacros completos</strong> resueltos, incluido un examen final cronometrado"
 ],

@@ -61,7 +61,22 @@ padding-top:22px;border-top:1px solid var(--border);font-size:14px}
 footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--border);
 font-size:12.5px;color:var(--dim)}
 footer a{color:var(--claude);text-decoration:none}
-@media(max-width:600px){h1{font-size:25px}.wrap{padding:20px 16px 48px}}</style>
+.ral-seo{margin:36px 0 8px;padding:22px 24px;background:var(--card);border:1px solid var(--border);
+border-radius:12px;position:relative;overflow:hidden}
+.ral-seo::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+background:linear-gradient(180deg,var(--claude),var(--claude-2))}
+.ral-seo .ral-k{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--claude);margin-bottom:6px}
+.ral-seo .ral-t{font-size:17px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
+.ral-seo .ral-p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.ral-seo .ral-btn{display:inline-block;padding:10px 20px;background:var(--claude);color:#fff;
+font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.ral-seo .ral-btn:hover{opacity:.88}
+.ral-seo .ral-alt{display:inline-block;margin-left:12px;font-size:13px;color:var(--claude);
+text-decoration:none;font-weight:600}
+.ral-seo .ral-alt:hover{text-decoration:underline}
+@media(max-width:600px){h1{font-size:25px}.wrap{padding:20px 16px 48px}
+.ral-seo .ral-btn,.ral-seo .ral-alt{display:block;text-align:center;margin:6px 0 0}}</style>
 </head>
 <body>
 <div class="wrap">
@@ -136,8 +151,8 @@ footer a{color:var(--claude);text-decoration:none}
 <p>A. Revisar tu propia enseñanza y el instrumento antes de atribuirlo a los estudiantes.<br>B. Programar recuperación individual.<br>C. Reducir el nivel de exigencia del tema.<br>D. Aplicar un refuerzo adicional del mismo contenido con más ejercicios para que los estudiantes practiquen hasta dominarlo.</p>
 <details><summary>Ver respuesta</summary><p><strong>✔ A.</strong> Fallo masivo = señal sobre la enseñanza (módulo 2, patrón del 1290). <br>🔍 <strong>Técnica:</strong> B atiende individualmente sin cuestionar la causa grupal (verdadero-pero-incompleto); C baja la meta en vez de mejorar la enseñanza (opuesta-al-principio); D repite la misma estrategia que ya falló (regla-en-nivel-equivocado).</p></details></div>
 <div class="sim-q"><p><strong>15.</strong> Para que los estudiantes transfieran lo aprendido en tu área a nuevos contextos, debes:</p>
-<p>A. Practicar muchas veces el mismo tipo de ejercicio.<br>B. Enseñar la teoría de forma rigurosa para que el estudiante la aplique por sí mismo cuando encuentre situaciones diferentes.<br>C. Aumentar la dificultad progresivamente.<br>D. Variar contextos y tipos de problema, y hacer explícito el principio que se mantiene entre ellos.</p>
-<details><summary>Ver respuesta</summary><p><strong>✔ D.</strong> La transferencia se diseña con variación y abstracción del principio; no llega sola con repetición (A). <br>🔍 <strong>Técnica:</strong> A automatiza sin variar contexto (opuesta-al-principio); C sube la exigencia pero sin cambiar el tipo de situación (verdadero-pero-incompleto); B asume que la teoría produce transferencia automática (absurda-plausible).</p></details></div>
+<p>A. Practicar muchas veces el mismo tipo de ejercicio en contextos similares hasta que el procedimiento quede automatizado.<br>B. Enseñar la teoría de forma rigurosa para que el estudiante la aplique por sí mismo cuando encuentre situaciones diferentes.<br>C. Aumentar la dificultad progresivamente dentro del mismo tipo de problema hasta alcanzar el nivel más exigente del grado.<br>D. Variar las situaciones y los tipos de problema, y hacer explícito el principio que se mantiene entre ellos.</p>
+<details><summary>Ver respuesta</summary><p><strong>✔ D.</strong> La transferencia se diseña con variación de situaciones y abstracción del principio; no llega sola con repetición (A). <br>🔍 <strong>Técnica:</strong> A automatiza sin variar la situación (opuesta-al-principio); C sube la exigencia pero sin cambiar el tipo de situación (verdadero-pero-incompleto); B asume que la teoría produce transferencia automática (absurda-plausible).</p></details></div>
 <div class="sim-q"><p><strong>16.</strong> La evaluación entre pares en tu área es válida cuando:</p>
 <p>A. Reemplaza la evaluación del docente para ahorrar tiempo.<br>B. Los estudiantes se ponen nota mutuamente con libertad.<br>C. Se hace con criterios claros (rúbrica), foco formativo y acompañamiento: desarrolla criterio y metacognición.<br>D. Se limita a los estudiantes con mejor desempeño, que evalúan a los demás como ejercicio de responsabilidad académica.</p>
 <details><summary>Ver respuesta</summary><p><strong>✔ C.</strong> Coevaluación con criterios y propósito formativo, no como delegación (A) ni informalidad (B). <br>🔍 <strong>Técnica:</strong> A delega la evaluación sin propósito formativo (opuesta-al-principio); B carece de criterios y estructura (absurda-plausible); D crea jerarquía entre estudiantes en vez de aprendizaje mutuo (regla-en-nivel-equivocado).</p></details></div>
@@ -145,7 +160,7 @@ footer a{color:var(--claude);text-decoration:none}
 <p>A. Improvisar una respuesta para no perder autoridad.<br>B. Reconocerlo con naturalidad, y convertirlo en oportunidad: "excelente pregunta, investiguémoslo" y modelar cómo se busca la respuesta.<br>C. Decir que no es relevante para el tema.<br>D. Pedir al estudiante que investigue por su cuenta y presente la respuesta en la siguiente clase, delegando en él la responsabilidad de resolver la duda.</p>
 <details><summary>Ver respuesta</summary><p><strong>✔ B.</strong> Honestidad intelectual + modelaje de la indagación. La autoridad se construye así, no fingiendo saberlo todo (A). <br>🔍 <strong>Técnica:</strong> A finge saber y pierde credibilidad (opuesta-al-principio); C evade la pregunta (absurda-plausible); D delega sin modelar el proceso de indagación (verdadero-pero-incompleto).</p></details></div>
 <div class="sim-q"><p><strong>18.</strong> Para desarrollar pensamiento crítico en tu área, la actividad más potente es:</p>
-<p>A. Que analicen, comparen posturas, evalúen evidencia o resuelvan un problema abierto con justificación.<br>B. Que resuman la información clave del tema.<br>C. Que memoricen los conceptos fundamentales.<br>D. Que debatan en equipos sobre el tema utilizando exclusivamente sus opiniones personales y experiencias previas.</p>
+<p>A. Que analicen, comparen posturas, evalúen evidencia o resuelvan un problema abierto con justificación.<br>B. Que resuman la información clave del tema.<br>C. Que memoricen los conceptos fundamentales.<br>D. Que debatan en equipos sobre el tema apoyándose sobre todo en sus opiniones personales y experiencias previas, sin consultar fuentes adicionales.</p>
 <details><summary>Ver respuesta</summary><p><strong>✔ A.</strong> El pensamiento crítico se ejercita con tareas de alta demanda cognitiva, no con resumen (B) ni memoria (C). <br>🔍 <strong>Técnica:</strong> B reduce a reproducción de información (verdadero-pero-incompleto); C queda en el nivel más bajo de demanda cognitiva (opuesta-al-principio); D debate sin evidencia es opinión, no pensamiento crítico (absurda-plausible).</p></details></div>
 <div class="sim-q"><p><strong>19.</strong> La planeación de tu clase debe verse, ante todo, como:</p>
 <p>A. Un requisito administrativo que entrega a coordinación.<br>B. Un documento detallado que incluya tiempos exactos, actividades minuto a minuto y materiales completos para cada sesión.<br>C. Un guion fijo que debe cumplirse tal cual para garantizar cobertura.<br>D. Una herramienta flexible al servicio del aprendizaje, que ajustas según lo que ocurre en el aula.</p>
@@ -161,9 +176,18 @@ footer a{color:var(--claude);text-decoration:none}
 <div class="ral-cta"><p>🎓 <strong>Tu expertise disciplinar + un posgrado = doble ventaja.</strong> Apruebas la prueba escrita con tu conocimiento, y el posgrado sube tu puntaje de antecedentes. <a href="https://researchailab.com/informe.html" target="_blank" rel="noopener">Envíame tu tema de tesis → informe preliminar gratis</a></p></div>
 <div class="tip">Hallazgo típico y valioso: la mayoría de los aspirantes domina el contenido de su área pero pierde puntos en la DIDÁCTICA del área (cómo se enseña, cómo se corrige el error). Si te pasa, no estudies más de tu materia: vuelve al módulo 2.</div></article>
 
+
+<div class="ral-seo">
+  <div class="ral-k">Research AI Lab</div>
+  <div class="ral-t">¿Necesitas ayuda con tu investigación?</div>
+  <div class="ral-p">Asesoría personalizada + entregables reales: revisión de literatura sistematizada, vault de Obsidian con tus referencias organizadas y guía paso a paso con tu tutor de tesis.</div>
+  <a class="ral-btn" href="https://researchailab.com/flujo.html" target="_blank" rel="noopener">Conocer el Flujo del Investigador</a>
+  <a class="ral-alt" href="https://wa.me/573116128640?text=Hola%2C%20vi%20el%20curso%20del%20Concurso%20Docente.%20Me%20interesa%20la%20asesor%C3%ADa%20de%20investigaci%C3%B3n.%20%C2%BFC%C3%B3mo%20funciona%3F" target="_blank" rel="noopener">Preguntar por WhatsApp →</a>
+</div>
+
 <a class="cta" href="/#phase-areas">
   <b>Practica esta lección en el curso completo</b>
-  <span>31 lecciones y más de 300 preguntas tipo examen, con la explicación de por qué cada distractor está mal. Gratis y sin registro.</span>
+  <span>31 lecciones y más de 430 preguntas tipo examen, con la explicación de por qué cada distractor está mal. Gratis y sin registro.</span>
 </a>
 
 <nav class="nav">
