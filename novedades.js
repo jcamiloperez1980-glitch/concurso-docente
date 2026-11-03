@@ -4,9 +4,25 @@
 // Actualizar manualmente o con /actualiza-cursos cuando haya novedades.
 // ============================================================
 window.NOVEDADES = {
-  actualizado: "2026-10-09",
+  actualizado: "2026-11-03",
   color: "#d97706",
   items: [
+    {
+      fecha: "2026-10-30",
+      tag: "Vacantes",
+      titulo: "La CNSC ya habla de 31.163 vacantes y sale a socializar el concurso en varias ciudades",
+      resumen: "El 30 de octubre la CNSC anunció jornadas presenciales de divulgación del proceso docentes y directivos docentes 2026 y lo presentó con 31.163 vacantes en 89 entidades territoriales certificadas en educación más el Colegio de Boyacá, para docente de aula, docente orientador, rector, coordinador y director rural. Son unas 3.000 plazas más que las 28.000 de la OPEC preliminar de agosto. Las próximas jornadas son el 4 de noviembre en la Universidad Pedagógica (Bogotá), el 5 en Valledupar y el 7 en Soacha, abiertas a cualquier persona aunque hoy no sea docente. La CNSC todavía no publica fechas de inscripción ni de pruebas.",
+      accion: "Si te queda cerca una de las jornadas, inscríbete en el formulario de la página de la CNSC y lleva tus preguntas sobre tu cargo y tu municipio. Cuando salga la OPEC definitiva, vuelve a mirar en simo.cnsc.gov.co cuántas plazas hay de tu cargo y área, porque el número cambió. Mientras tanto sigue con tu plan de estudio y tu hoja de vida en SIMO al día.",
+      url: "https://www.cnsc.gov.co/docentes-y-directivos-docentes-conozca-las-jornadas-de-divulgacion-presenciales"
+    },
+    {
+      fecha: "2026-10-14",
+      tag: "Pruebas",
+      titulo: "El MEN cerró el proceso del decreto que bajaría el puntaje mínimo, pero todavía no lo ha firmado",
+      resumen: "El proyecto PN-2026-31990, que bajaría el puntaje mínimo aprobatorio a 50/100 para docentes y 60/100 para directivos, pasó en SUCOP a estado \"Proceso finalizado\". El 14 de octubre el Ministerio de Educación cargó la respuesta a los 179 comentarios ciudadanos y el certificado de la consulta pública. Eso cierra la etapa de consulta, pero no es el decreto: hasta hoy no se ha publicado un decreto firmado que cambie los artículos 2.4.1.1.11 y 2.4.1.1.13 del Decreto 1075 de 2015.",
+      accion: "Sigue estudiando para el umbral vigente, 60/100 docentes y 70/100 directivos, que es el que rige mientras no se firme el decreto. Si comentaste el proyecto, puedes leer la respuesta del Ministerio en la sección de documentos de SUCOP. Te avisaremos aquí si el decreto se firma.",
+      url: "https://www.sucop.gov.co/entidades/mineducacion/Normativa?IDNorma=31990"
+    },
     {
       fecha: "2026-10-06",
       tag: "Ascenso",
@@ -32,28 +48,12 @@ window.NOVEDADES = {
       url: "https://www.cnsc.gov.co/node/67745"
     },
     {
-      fecha: "2026-09-03",
-      tag: "Cronograma",
-      titulo: "En qué va el concurso hoy: la CNSC está respondiendo las observaciones y todavía NO hay fecha de inscripciones",
-      resumen: "Han pasado dos semanas desde que cerró el plazo de observaciones el 25 de agosto y no ha salido noticia nueva. Revisamos hoy los tres canales oficiales y esto es lo que hay. La CNSC no publica nada sobre docentes desde el 19 de agosto: está en la fase de revisar una por una las observaciones ciudadanas a los proyectos de acuerdo, el anexo técnico y la OPEC preliminar. Su compromiso textual es que \"cada observación será revisada y respondida\" y que todas las respuestas quedarán publicadas \"en una matriz de acceso público\"; solo después vienen los acuerdos definitivos y la OPEC definitiva. Sobre inscripciones, la CNSC únicamente dice que esa etapa \"se surtirá posteriormente y será informada oportunamente\": no existe fecha oficial, así que desconfía de cualquier página que te prometa un día exacto. En paralelo, el proyecto de decreto que bajaría el puntaje mínimo (PN-2026-31990) sigue hoy en estado \"En análisis de los comentarios\" con sus 179 comentarios, y el Ministerio aún no ha cargado la respuesta.",
-      accion: "No te perdiste ningún trámite: en este momento no hay nada abierto que debas hacer ante la CNSC. Usa esta pausa para lo que sí depende de ti: consulta la OPEC preliminar en simo.cnsc.gov.co para ver las plazas de tu cargo y área, deja tu hoja de vida en SIMO completa y con los títulos y certificados de experiencia ya escaneados (solo lo certificado puntúa), y sigue estudiando con el umbral vigente hoy, 60/100 docentes y 70/100 directivos. Te avisamos aquí apenas se publique la matriz de respuestas o los acuerdos definitivos.",
-      url: "https://www.cnsc.gov.co/la-cnsc-publica-los-proyectos-de-acuerdo-el-anexo-tecnico-y-la-opec-preliminar-del-proceso-de"
-    },
-    {
       fecha: "2026-08-19",
       tag: "Cronograma",
       titulo: "Ya salió la OPEC preliminar: 28.000+ vacantes y tienes hasta el 25 de agosto para hacer observaciones",
       resumen: "La CNSC publicó el 19 de agosto los proyectos de acuerdo de convocatoria de cada Entidad Territorial Certificada, el anexo técnico y la OPEC preliminar del proceso de selección docentes y directivos docentes 2026, con más de 28.000 vacantes. Las reglas del concurso están sobre la mesa antes de quedar en firme: la ciudadanía tiene siete días calendario —del 19 al 25 de agosto, incluidos sábado y domingo— para presentar observaciones a un artículo, numeral o dato puntual. Por primera vez el proceso incorpora la reserva de mínimo el 7 % de las vacantes para personas con discapacidad (Ley 2418 de 2024 y Sentencia C-117 de 2026). La OPEC de esta etapa es preliminar y puede variar hasta antes de abrir inscripciones; las pruebas se aplicarán en más de 50 ciudades, con citación mínimo 10 días antes.",
       accion: "El plazo de observaciones cerró el 25 de agosto. La OPEC preliminar sigue publicada en simo.cnsc.gov.co → \"Proyectos Acuerdo\": revísala para ver cuántas plazas hay de tu cargo y área en tu municipio y ve preparando tu perfil. La CNSC publicará una matriz pública con la respuesta a cada observación y luego los acuerdos y la OPEC definitiva; solo entonces abren inscripciones (ahora proyectadas entre diciembre de 2026 y febrero de 2027).",
       url: "https://www.cnsc.gov.co/la-cnsc-publica-los-proyectos-de-acuerdo-el-anexo-tecnico-y-la-opec-preliminar-del-proceso-de"
-    },
-    {
-      fecha: "2026-08-12",
-      tag: "Pruebas",
-      titulo: "Cerró la consulta del decreto de puntajes: 179 comentarios y el MEN ya los está analizando",
-      resumen: "La consulta pública del proyecto PN-2026-31990 —el que bajaría el puntaje mínimo aprobatorio a 50/100 para docentes y 60/100 para directivos— cerró el martes 11 de agosto de 2026 con 179 comentarios ciudadanos, 36 más que la semana pasada. El proyecto pasó al estado \"En análisis de los comentarios\": el Ministerio de Educación debe ahora estudiar las observaciones y decidir si firma el decreto tal como se publicó, lo modifica o lo archiva. Los comentarios están divididos: varios docentes piden mantener 60/100 argumentando que un umbral más bajo llenaría las listas de elegibles muy por encima del número de plazas; otros respaldan la propuesta por dar más peso a formación, experiencia y arraigo territorial.",
-      accion: "Ya no se pueden dejar comentarios. Sigue estudiando con el umbral vigente hoy —60/100 docentes y 70/100 directivos— porque es el que rige hasta que se firme un decreto nuevo. No hay plazo legal fijo para que el MEN decida, así que puede tardar semanas: te avisaremos aquí apenas el proyecto quede expedido o archivado.",
-      url: "https://www.sucop.gov.co/entidades/mineducacion/Normativa?IDNorma=31990"
     },
     {
       fecha: "2026-08-08",
