@@ -6,7 +6,7 @@
 const CONTENT = {
 
 "A1": { html: `<h3>Estructura del concurso docente 2026</h3>
-<p>El concurso de ingreso al magisterio es un proceso de mérito administrado por la CNSC (Comisión Nacional del Servicio Civil) bajo el Decreto 1278 de 2002. Para 2026 se proyectan más de 13.000 vacantes. Entender su estructura es tu primera ventaja: la mayoría de aspirantes llega sin saber qué pesa cada prueba.</p>
+<p>El concurso de ingreso al magisterio es un proceso de mérito administrado por la CNSC (Comisión Nacional del Servicio Civil) bajo el Decreto 1278 de 2002. Para el proceso 2026 la CNSC anunció 31.163 vacantes en 89 entidades territoriales certificadas más el Colegio de Boyacá (octubre de 2026); la cifra definitiva sale con la OPEC. Entender su estructura es tu primera ventaja: la mayoría de aspirantes llega sin saber qué pesa cada prueba.</p>
 <h4>Las 5 etapas</h4>
 <ol>
 <li><strong>Inscripción en SIMO:</strong> subes títulos y experiencia a la plataforma de la CNSC. Errores aquí te sacan antes de empezar.</li>
