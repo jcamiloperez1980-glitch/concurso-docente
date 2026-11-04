@@ -168,6 +168,12 @@
       });
     }
 
+    // Botón "Empieza gratis / Continuar" (hero o cierre de página)
+    var startBtn = t.closest('[data-cta="start"]');
+    if (startBtn) {
+      track('start_course_click', { location: startBtn.closest('#finalCta') ? 'final' : 'hero' });
+    }
+
     var ytLink = t.closest('.yt-link');
     if (ytLink) {
       var query = ytLink.textContent.replace(/▶️?\s*/g, '').trim();
